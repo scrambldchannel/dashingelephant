@@ -6,7 +6,7 @@
       <input
         type="text"
         placeholder="Search (Press  &quot;/&quot; to focus)"
-        class="bg-background-form border border-gray-500 rounded-full px-4 pl-10 py-2 outline-none focus:border-green-500 w-80"
+        class="bg-background-form border border-gray-500 rounded-full px-4 pl-10 py-2 outline-none focus:border-teal-500 w-80"
         v-model="query"
         @input="softReset"
         @keyup="performSearch"
@@ -74,15 +74,6 @@ query Search {
       }
     }
   }
-  allDocumentation {
-    edges {
-      node {
-        id
-        path
-        title
-      }
-    }
-  }
 }
 </static-query>
 
@@ -102,13 +93,6 @@ export default {
           path: page.path,
           title: page.title,
           summary: page.summary
-        });
-      });
-      const allDocs = this.$static.allDocumentation.edges.map(edge => edge.node);
-      allDocs.forEach(page => {
-        result.push({
-          path: page.path,
-          title: page.title
         });
       });
       return result;
