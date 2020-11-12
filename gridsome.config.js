@@ -22,7 +22,10 @@ module.exports = {
             typeName: 'Tag',
             create: true
           }
-        }
+        },
+        plugins: [
+          '@gridsome/remark-prismjs'
+        ]
       }
     },
     {
@@ -30,15 +33,15 @@ module.exports = {
       options: {
         contentTypeName: 'Post',
         feedOptions: {
-          title: 'Gridsome Portfolio Starter Blog',
-          feed_url: 'https://gridsome-portfolio-starter.netlify.com/rss.xml',
-          site_url: 'https://gridsome-portfolio-starter.netlify.com/'
+          title: 'Code and Cricket',
+          feed_url: 'https://codeandcricket.netlify.com/rss.xml',
+          site_url: 'https://codeandcricket.netlify.com/'
         },
         feedItemOptions: node => ({
           title: node.title,
           description: node.summary,
-          url: 'https://gridsome-portfolio-starter.netlify.com' + node.path,
-          author: 'Andre Madarang',
+          url: 'https://codeandcricket.netlify.com' + node.path,
+          author: 'Alexander Sutcliffe',
           date: node.date
         }),
         output: {
