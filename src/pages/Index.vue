@@ -4,7 +4,7 @@
       class="hero container-inner mx-auto flex flex-col sm:flex-row justify-between py-16"
     >
       <div class="font-bold w-full sm:w-3/5 text-center sm:text-left">
-        <div class="leading-tight text-4xl">Alex Sutcliffe</div>
+        <div class="leading-tight text-4xl">Alexander Sutcliffe</div>
         <div class="text-teal-700 leading-tight text-2xl">
           Business Intelligence Specialist
         </div>
