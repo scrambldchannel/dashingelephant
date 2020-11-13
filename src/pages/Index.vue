@@ -12,7 +12,7 @@
       <div class="mt-8 sm:mt-0">
         <!-- change this image -->
         <g-image
-          src="../../static/code_review.svg"
+          src="../../static/chart.svg"
           alt="hero"
           class="mx-auto sm:mx-0"
         />
