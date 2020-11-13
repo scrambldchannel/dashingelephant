@@ -15,7 +15,7 @@
     "@gridsome/vue-remark": "^0.2.4",
     "axios": "^0.20.0",
     "gridsome": "^0.7.20",
-    "gridsome-plugin-remark-shiki": "file:../../gridsome-plugin-remark-shiki",
+    "gridsome-plugin-remark-shiki": "github:scrambldchannel/gridsome-plugin-remark-shiki",
     "gridsome-plugin-rss": "^1.2.0",
     "vue-fuse": "^2.2.1",
     "vue-scrollto": "^2.18.2"
