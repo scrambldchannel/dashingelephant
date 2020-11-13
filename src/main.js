@@ -23,12 +23,12 @@ export default function (Vue, { router, head, isClient }) {
 
   head.meta.push({
     name: 'description',
-    content: 'Gridsome Portfolio Starter'
+    content: 'Code and Cricket'
   })
 
   head.meta.push({
     name: 'author',
-    content: 'Andre Madarang'
+    content: 'Alexander Sutcliffe'
   })
 
   head.link.push({
