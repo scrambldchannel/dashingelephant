@@ -53,9 +53,16 @@ module.exports = {
     {
       use: '@gridsome/plugin-sitemap',
       options: {
-        cacheTime: 600000, // default
+        config: {
+          '/blog/*': {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: '2020-11-13',
+          }
+        }
       }
-    },
+    }
+
   ],
   templates: {
     Tag: '/tag/:id'
@@ -63,7 +70,7 @@ module.exports = {
   transformers: {
     remark: {
       plugins: [
-        [ 'gridsome-plugin-remark-shiki', { theme: 'nord', skipInline: true } ]
+        ['gridsome-plugin-remark-shiki', { theme: 'nord', skipInline: true }]
       ],
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
