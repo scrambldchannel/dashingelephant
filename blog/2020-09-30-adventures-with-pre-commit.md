@@ -135,7 +135,7 @@ setup.py:7:30: E231 missing whitespace after ','
 I don't care but sided with black on this occasion. I found a bit of [chat](https://gitlab.com/pycqa/flake8/-/issues/428) about adding support for an entry ```pyproject.toml``` to manage the flake8 config but I couldn't see any evidence that it worked. Instead I create a ```.flake8``` file with the following:
 
 
-```
+```yaml
 [flake8]
 ignore = E231
 max-line-length = 120
@@ -154,7 +154,7 @@ Once you've installed pre-commit in a git repo the checks will all run every tim
 You can also run the various checks from the command line outside of a commit. This gives you finer grained control and also allows running tools like black and isort on demand from their repos without needing to install them. For example all checks can be run on all files with the following:
 
 ```sh
-pre-commit run --all-files
+$ pre-commit run --all-files
 ```
 
 This can be particularly useful if you're adding a set of hooks to an existing project and want to flag any issues you might run into at a later date. 
@@ -162,12 +162,12 @@ This can be particularly useful if you're adding a set of hooks to an existing p
 Or you can use the ```--files``` option to run hooks on a list of specific files:
 
 ```sh
-pre-commit run --files app.py class.py
+$ pre-commit run --files app.py class.py
 ```
 
 It's also possible to run only a specific hook. The command below will apply black to all files, irrespective of whether they are staged:
 ```sh
-pre-commit run black --all-files
+$ pre-commit run black --all-files
 ```
 
 ## Conclusion
