@@ -26,10 +26,10 @@
       >
         <h2 class="font-bold mb-6" id="projects">Key Technical Skills</h2>
 
-        <ul class="text-lg sm:text-xl space-y-6">
+        <ul class="text-lg sm:text-lg space-y-6">
           <li class="checkmark">
             <div>TM1 / Planning Analytics</div>
-            <div class="text-lg text-gray-600">
+            <div class="text-sm text-gray-600">
               10+ years of experience building blazing fast solutions using IBM
               Cognos TM1. Comfortable with all aspects of model design and
               overall architecture.
@@ -37,7 +37,7 @@
           </li>
           <li class="checkmark">
             <div>Python</div>
-            <div class="text-lg text-gray-600">
+            <div class="text-sm text-gray-600">
               Good level of proficiency for automation, analysis and data
               pipeline creation. I have also contributed to projects such as
               TM1py and Apahe Airflow.
@@ -45,7 +45,7 @@
           </li>
           <li class="checkmark">
             <div>SQL</div>
-            <div class="text-lg text-gray-600">
+            <div class="text-sm text-gray-600">
               Extremely comfortable writing SQL for ad hoc analysis and ETL
               purposes and possess a good understanding of the basis of
               relational database design.
@@ -54,17 +54,17 @@
         </ul>
         <h2 class="font-bold my-6" id="soft skills">Soft Skills</h2>
 
-        <ul class="text-lg sm:text-xl space-y-6">
+        <ul class="text-lg sm:text-lg space-y-6">
           <li class="checkmark">
             <div>Project Management</div>
-            <div class="text-lg text-gray-600">
+            <div class="text-sm text-gray-600">
               A track record of delivering projects on time and within budget
               with an emphasis on stakeholder communication.
             </div>
           </li>
           <li class="checkmark">
             <div>Agile/DevOPs</div>
-            <div class="text-lg text-gray-600">
+            <div class="text-sm text-gray-600">
               Comfortable working in Agile environments using small iterations
               and CI/CD to deliver increased value and transparency to
               stakeholders.
@@ -72,7 +72,7 @@
           </li>
           <li class="checkmark">
             <div>Team Lead</div>
-            <div class="text-lg text-gray-600">
+            <div class="text-sm text-gray-600">
               Experience with leading small teams both colocated and remote.
             </div>
           </li>
@@ -85,7 +85,7 @@
       <div
         class="get-to-know-me container-inner mx-auto text-xl pb-16 relative"
       >
-        <h2 class="font-bold mb-6" id="about">Get to know me:</h2>
+        <h2 class="font-bold mb-6" id="about">About me:</h2>
 
         <div
           class="flex flex-col sm:flex-row justify-between items-center mb-16"
@@ -98,7 +98,7 @@
             />
           </div>
           <div class="flex-1 text-lg sm:text-xl ml-6">
-            Berlin based developer sharing my passion for all things tech as
+            Hi, I'm a Berlin based developer sharing my passion for all things tech as
             well as my other interests such as photography, cycling and cricket.
           </div>
         </div>
