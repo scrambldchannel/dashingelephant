@@ -7,3 +7,5 @@ dist
 .env
 .env.*
 static/rss.xml
+cypress/screenshots
+cypress/videos
