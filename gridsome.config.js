@@ -23,9 +23,6 @@ module.exports = {
             create: true
           }
         },
-        plugins: [
-          '@gridsome/remark-prismjs'
-        ]
       }
     },
     {
