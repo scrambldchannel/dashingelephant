@@ -2,9 +2,9 @@
 title: Will Python replace Excel? The answer is, er, complicated
 path: "/python-replacing-excel"
 date: 2020-09-27
-summary: " I listened to another podcast proclaiming that Python was going to spell
+summary: I read another blogpost recently claiming that Python was going to spell
   the end of Excel's reign as one of, if not the most, used tool for analytics. Maybe
-  it's largely true in some pockets but I think the real picture is a bit more complicated."
+  it's largely true in some pockets but I think the real picture is a bit more complicated.
 tags:
 - excel
 - python
