@@ -23,6 +23,19 @@ module.exports = {
             create: true
           }
         },
+        remark: {
+          plugins: [
+            ['gridsome-plugin-remark-prismjs-all', {
+              showLineNumbers: false, //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
+              noInlineHighlight: false,
+            },
+
+            ],
+          ],
+          externalLinksTarget: '_blank',
+          externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+          anchorClassName: 'icon icon-link',
+        }
       }
     },
     {
@@ -66,9 +79,6 @@ module.exports = {
   },
   transformers: {
     remark: {
-      plugins: [
-        ['gridsome-plugin-remark-shiki', { theme: 'nord', skipInline: true }]
-      ],
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
       anchorClassName: 'icon icon-link',
