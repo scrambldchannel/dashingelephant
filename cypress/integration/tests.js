@@ -53,21 +53,20 @@ describe('Loading Pages', () => {
   })
 
   describe('Pagination', () => {
-    // skipping these until there is sufficient content
-    it.skip('the next button works', () => {
+    it('the next button works', () => {
       cy.visit('/blog')
 
       cy.get('[data-cypress=next').click()
       cy.url().should('include', '/blog/2')
-      cy.contains('Vue vs React Comparison')
+      cy.contains('Trying to stay on the right track with git')
     })
 
-    it.skip('the prev button works', () => {
+    it('the prev button works', () => {
       cy.visit('/blog/2')
 
       cy.get('[data-cypress=prev').click()
       cy.url().should('include', '/blog')
-      cy.contains('Introduction to Gridsome')
+      cy.contains('Adventures with pre-commit')
     })
   })
 
