@@ -1,5 +1,5 @@
 ---
-title: Julia are you sure I should commit?
+title: Julia, are you sure I should commit?
 path: /julia-and-pre-commit
 date: 2020-10-11
 summary: I've been working on Julia for a week now and wanted to try add some pre-commit hooks to the module I have started creating. One of the strengths of the pre-commit library for Python is the ability to create hooks for other languages. I didn't find much out there for Julia though so I tried to build one from scratch.
