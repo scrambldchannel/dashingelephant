@@ -10,7 +10,7 @@
         <div>
           <g-link
             v-if="theme === 'theme-light'"
-            class="uppercase tracking-wide font-bold text-copy-primary hover:text-gray-600"
+            class="no-underline uppercase tracking-wide font-bold text-copy-primary hover:text-gray-600"
             to="/"
             >Code and Cricket</g-link
           >
