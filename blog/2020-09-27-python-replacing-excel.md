@@ -2,11 +2,9 @@
 title: Will Python replace Excel? The answer is, er, complicated
 path: "/python-replacing-excel"
 date: 2020-09-27
-summary: I've been working on Julia for a week now and wanted to take time out to
-  clarify my dev workflow. I had a few headaches trying to get Julia code to update
-  once I'd changed it and was a bit clueless about testing. I'm also a big fan of
-  git hooks and wanted to use them to automate a few a checks and balances. Here's
-  what I've learned so far.
+summary: " I listened to another podcast proclaiming that Python was going to spell
+  the end of Excel's reign as one of, if not the most, used tool for analytics. Maybe
+  it's largely true in some pockets but I think the real picture is a bit more complicated."
 tags:
 - excel
 - python
