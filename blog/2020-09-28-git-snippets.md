@@ -1,11 +1,16 @@
 ---
 title: Trying to stay on the right track with git
-path: /hot-promotion-of-tm1-pro-file
+path: "/hot-promotion-of-tm1-pro-file"
 date: 2020-09-28
-summary: For when my memories are murky, this is a list of common git commands I tend to use, aimed at a relative newbie. I actually used it to give an intro to git presentation to my team a few years ago but it's still a nice reminder of basic usage.
-tags: ['git', 'github', 'bash']
----
+summary: For when my memories are murky, this is a list of common git commands I tend
+  to use, aimed at a relative newbie. I actually used it to give an intro to git presentation
+  to my team a few years ago but it's still a nice reminder of basic usage.
+tags:
+- git
+- github
+- bash
 
+---
 This is a list of common git commands I tend to use, aimed at a relative newbie. I actually used it to give an intro to git presentation to my team a few years ago but it's still a nice reminder of basic usage. I'll tweak it as I go along.
 
 ### Clone a repo
@@ -25,7 +30,7 @@ git branch features/my_new_feature
 git checkout features/my_new_feature
 ```
 
-This is fine, but I've lost count of the times I've created the branch but forgotten to check it out. This has sometimes led me to committing changes to the wrong branch and having to clean up the mess. So I generally use this command to both steps in a single line:
+This is fine, but I've lost count of the times I've created the branch but forgotten to check it out. This has sometimes led me to commit changes to the wrong branch and having to clean up the mess. So I generally use this command to both steps in a single line:
 
 ```sh
 git checkout -b features/my_new_feature
@@ -102,9 +107,9 @@ When changes have been made upstream, I fetch changes and rebase my local master
 git fetch upstream
 ```
 
-### Rebase local branch on remote
+### Rebase a local branch on remote
 
-I can rebase the branch I'm working on with a remote fork (in this case upstream) in order to apply any changes made there to my local fork. This is a good idea before raising a PR and ensures your PR is easier to understand.
+I can rebase the branch I'm working on with a remote fork (in this case upstream) in order to apply any changes made upstream to my local fork. This is a good idea before raising a PR and ensures your PR is easier to understand.
 
 ```sh
 git rebase upstream/master
@@ -114,7 +119,7 @@ In this case, I can then push my changes up to my remote fork so it is tracking 
 
 ### Checkout a remote branch
 
-Sometimes someone will create a new fork in the upstream repository that I wish to clone locally. Or pehaps I want to checkout a branch I've pushed to my remote fork repository from a different development environment.
+Sometimes someone will create a new fork in the upstream repository that I wish to clone locally. Or perhaps I want to check out a branch I've pushed to my remote fork repository from a different development environment.
 
 ```sh
 git checkout --track upstream/issue/cube-get-last-data-update
