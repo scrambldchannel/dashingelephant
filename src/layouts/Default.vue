@@ -13,13 +13,13 @@
             class="uppercase tracking-wide font-bold text-copy-primary hover:text-gray-600"
             to="/"
           >
-            <g-image src="../../static/logo.png"
+            <g-image src="../../static/logo.png" width="200"
           /></g-link>
           <g-link
             v-else
             class="uppercase tracking-wide font-bold text-copy-primary hover:text-gray-600"
             to="/"
-            ><g-image src="../../static/logo_dark.png"
+            ><g-image src="../../static/logo_dark.png" width="200"
           /></g-link>
         </div>
         <div class="block lg:hidden">
