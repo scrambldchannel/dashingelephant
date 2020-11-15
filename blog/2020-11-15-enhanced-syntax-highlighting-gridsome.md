@@ -124,3 +124,7 @@ Gives:
 ```bash{promptUser: "alex"}{promptHost: "thinky"}
 python ./fizzbuzz.py
 ```
+
+### Inline testing
+
+Trevor says `bash ./fizzbuzz.py` every day

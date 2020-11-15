@@ -950,14 +950,14 @@
 
 
   /* override some styling for code blocks
-    this is a bit of a hack, maybe all this css should be bundled into main.css? 
+    this is a bit of a hack, maybe all
   
   */ 
   .gridsome-code-title {
     position: relative;
     margin-bottom: -0.8em;
-    background-color: #2C7A7B;
-    color: #f7fafc;
+    @apply text-teal-700;
+    @apply bg-gray-300;
     font-size: 0.875rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -966,3 +966,8 @@
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
   
+  code[class*="language-inline-"],
+  pre[class*="language-inline-"] {
+    @apply text-teal-700;
+    @apply bg-gray-300;
+  }
