@@ -911,8 +911,4 @@
 
   */
 
-code[class*="language-inline-"], pre[class*="language-inline-"] {
-  @apply text-teal-700;
-  @apply bg-gray-300;
-}
 
