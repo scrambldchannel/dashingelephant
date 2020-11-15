@@ -168,12 +168,11 @@
                 </label>
 
                 <textarea
-                  id="message"
                   rows="5"
                   name="message"
                   v-model="formData.message"
                   class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none appearance-none focus:border-teal-700 mb-2 px-4 py-4"
-                  placeholder="Enter your message here...."
+                  placeholder="Enter your friendly message"
                   required
                 ></textarea>
               </div>
