@@ -154,7 +154,6 @@
                   <input
                     type="email"
                     name="email"
-                    v-model="formData.email"
                     id="email"
                     placeholder="ignatius@gmail.com"
                     class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-teal-700 mb-2 p-4"
