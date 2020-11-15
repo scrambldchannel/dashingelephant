@@ -10,13 +10,13 @@
         <div>
           <g-link
             v-if="theme === 'theme-light'"
-            class="no-underline uppercase tracking-wide font-bold text-copy-primary hover:text-gray-600"
+            class="uppercase tracking-wide font-bold text-copy-primary hover:text-gray-600"
             to="/"
             >Code and Cricket</g-link
           >
           <g-link
             v-else
-            class="no-underline uppercase tracking-wide font-bold text-copy-primary hover:text-gray-600"
+            class="uppercase tracking-wide font-bold text-copy-primary hover:text-gray-600"
             to="/"
             >Code and Cricket</g-link
           >
