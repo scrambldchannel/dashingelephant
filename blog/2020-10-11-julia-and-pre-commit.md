@@ -47,7 +47,7 @@ This defines two hooks that will be run when any Julia files are changed. The ``
 
 This is the script for formatting Julia code that will be fired by the ```format_julia``` hook. It first checks whether Julia is available in your path and, if so, askes Julia to execute a simple one liner that uses the formatter package to clean up any code. It will be executed once for every matching file that has been staged.
 
-```sh
+```bash
 #!/bin/bash
 
 # check Julia is in path
@@ -63,7 +63,7 @@ julia --color=yes -e  "using Pkg;Pkg.add(\"JuliaFormatter\");using JuliaFormatte
 
 This script also requires Julia and will run all the tests. It also takes a few arguments that allow setting a few parameters. These arguments can be passed to the hook when you add the hooks to your project.
 
-```sh
+```bash
 #!/usr/bin/env bash
 
 # check Julia is in path
