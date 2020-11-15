@@ -147,7 +147,8 @@ SuperTux
 #include "badguy/badguy.hpp"
 ```
 ````
-Gives:
+
+This highlights the specified lines:
 
 ```cpp{codeTitle: "supertux/src/badguy/badguy.cpp"}{numberLines: true}{1-2,16}
 SuperTux
