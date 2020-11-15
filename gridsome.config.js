@@ -27,7 +27,7 @@ module.exports = {
           plugins: [
             ['gridsome-plugin-remark-prismjs-all', {
               showLineNumbers: false, //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
-              noInlineHighlight: false,
+              noInlineHighlight: true,
             },
 
             ],
