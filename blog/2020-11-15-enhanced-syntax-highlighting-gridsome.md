@@ -6,7 +6,7 @@ summary: Having managed to syntax highlighting to work in Gridsome I wanted to e
 tags: ['prismjs', 'gridsome', 'vue']
 ---
 
-Having managed to syntax highlighting to work in Gridsome I wanted to explore some of the extra features offered by [gridsome-plugin-remark-prismjs-all](https://gridsome.org/plugins/gridsome-plugin-remark-prismjs-all).
+Having managed to get [syntax highlighting working in Gridsome](/syntax-highlighting-gridsome), I wanted to explore some of the extra features offered by [gridsome-plugin-remark-prismjs-all](https://gridsome.org/plugins/gridsome-plugin-remark-prismjs-all).
 
 The examples make it easy to enhance your code blocks with extra shiny stuff. Adding titles, line numbers and line highlighting to blocks is as simple as adding a bit of extra metadata.
 
@@ -24,7 +24,7 @@ for x in range(1, 101):
 print my_date.strftime('%d %A %a')
 ```
 
-#### Specify a language
+### Specify a language
 
 Kind of obvious you need to specify a language for highligting to take effect
 
@@ -46,7 +46,7 @@ for x in range(1, 101):
 print my_date.strftime('%d %A %a')
 ```
 
-#### Titles
+### Titles
 
 Use `codeTitle` to set a title for your code block:
 
@@ -68,7 +68,7 @@ for x in range(1, 101):
 print my_date.strftime('%d %A %a')
 ```
 
-#### Line numbering
+### Line numbering
 
 Other options can be added to the same block. Here we can add line numbering and specify the line we want to start numbering from:
 
@@ -90,7 +90,7 @@ for x in range(1, 101):
 print my_date.strftime('%d %A %a')
 ```
 
-#### Line highlighting
+### Line highlighting
 
 Here we can highlight lines by specifiying individual lines and ranges which is useful if you want to draw attention to specific lines of code while retaining the context. You can specify a set of numbers or ranges
 
@@ -111,7 +111,7 @@ for x in range(1, 101):
 print my_date.strftime('%d %A %a')
 ```
 
-#### Adding a nice prompt
+### Adding a nice prompt
 
 Another cool little trick is to add a nicely formatted prompt for shell commands: 
 
@@ -124,5 +124,3 @@ Gives:
 ```bash{promptUser: "alex"}{promptHost: "thinky"}
 python ./fizzbuzz.py
 ```
-
-
