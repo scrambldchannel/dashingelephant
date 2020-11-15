@@ -210,7 +210,7 @@ export default {
         .join("&");
     },
     handleSubmit(e) {
-      fetch("/", {
+      fetch("/success/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: this.encode({
@@ -218,7 +218,7 @@ export default {
           ...this.formData,
         }),
       })
-        .then(() => this.$router.push("/success"))
+        .then(() => this.$router.push("/success/"))
         .catch((error) => alert(error));
     },
   },
