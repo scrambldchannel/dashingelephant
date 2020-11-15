@@ -37,7 +37,7 @@ A pytest file is just a simple python script and tests can be straightforward ea
 
 I created a file and added the following lines of code:
 
-```python{codeTitle: "test_poc.py"}{numberLines:true}
+```python{codeTitle: "test_poc.py"}
 import pytest
 import json
 from TM1py.Services import TM1Service
@@ -57,7 +57,7 @@ This imports a few things, reads a config file with connection details and then 
 
 Here is an example of how the connection settings might look:
 
-```json{codeTitle: "connection_settings.py"}{numberLines : true}
+```json{codeTitle: "connection_settings.py"}
 {
     "tm1_dev" : {
         "address" : "localhost",
@@ -73,7 +73,7 @@ Here is an example of how the connection settings might look:
 
 Tests essentially run a bit of code and then make sure the result is within the desired parameters based on the input. The tests themselves don't do anything particularly interesting but illustrate the idea. Note each of these take the the `tm1_dev` fixture as an argument so can access its methods for communicating with TM1 API.
 
-```python{codeTitle: "test_poc.py"}{numberLines : 15}
+```python{codeTitle: "test_poc.py"}
 def test_cube_exists(tm1_dev):
     assert tm1_dev.cubes.exists("}ClientGroups")    
 
