@@ -676,12 +676,9 @@
   }
 
   .markdown-body code {
-    background-color: rgba(210, 199, 236, .40);
-    color: black;
     border-radius: 3px;
     font-size: 85%;
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-    monospace;   
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     margin: 0;
     padding: .2em .4em;
   }
