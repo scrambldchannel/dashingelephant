@@ -884,14 +884,12 @@
 /* purgecss end ignore */
 
 /* override some styling for code blocks
-    this is a bit of a hack, maybe all
+    this is a bit of a hack, maybe all */
   
-  */
-
-  .inline-language-text {
-    @apply text-teal-700;
-    @apply bg-gray-300;
-  }
+.inline-language-text {
+  @apply text-teal-700;
+  @apply bg-gray-300;
+}
 
 
 .gridsome-code-title {
