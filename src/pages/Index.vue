@@ -138,7 +138,7 @@
                     type="text"
                     name="name"
                     id="name"
-                    placeholder="Jon Snow"
+                    placeholder="Ignatius J. Reilly"
                     class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-teal-700 mb-2 p-4"
                     required
                   />
@@ -153,7 +153,7 @@
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="email@example.com"
+                    placeholder="ignatius@gmail.com"
                     class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-teal-700 mb-2 p-4"
                     required
                   />
