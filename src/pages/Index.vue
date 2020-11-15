@@ -98,8 +98,9 @@
             />
           </div>
           <div class="flex-1 text-lg sm:text-xl ml-6">
-            Hi, I'm a Berlin based developer sharing my passion for all things tech as
-            well as my other interests such as photography, cycling and cricket.
+            Hi, I'm a Berlin based developer sharing my passion for all things
+            tech as well as my other interests such as photography, cycling and
+            cricket.
           </div>
         </div>
       </div>
@@ -119,13 +120,13 @@
           <div class="text-lg sm:text-lg mb-16">
             <form
               name="contact"
-              id="contact"
               method="post"
-              @submit.prevent="handleSubmit"
+              v-on:submit.prevent="handleSubmit"
               action="/success/"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             >
+              <input type="hidden" name="form-name" value="contact" />
               <p hidden>
                 <label> Don’t fill this out: <input name="bot-field" /> </label>
               </p>
@@ -138,14 +139,12 @@
                   <input
                     type="text"
                     name="name"
-                    v-model="formData.name" 
-                    id="name"
+                    v-model="formData.name"
                     placeholder="Ignatius J. Reilly"
                     class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-teal-700 mb-2 p-4"
                     required
                   />
                 </div>
-
                 <div class="w-full px-4 md:w-1/2">
                   <label class="block text-copy-primary mb-2" for="email">
                     Email Address:
@@ -155,7 +154,6 @@
                     type="email"
                     name="email"
                     v-model="formData.email"
-                    id="email"
                     placeholder="ignatius@gmail.com"
                     class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-teal-700 mb-2 p-4"
                     required
@@ -170,8 +168,8 @@
 
                 <textarea
                   rows="5"
-                  form="contact"
                   name="message"
+                  v-model="formData.message"
                   class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none appearance-none focus:border-teal-700 mb-2 px-4 py-4"
                   placeholder="Enter your message here...."
                   required
@@ -180,8 +178,7 @@
 
               <div class="flex justify-end w-full">
                 <input
-                  type="submit"
-                  value="Submit"
+                  type="Submit"
                   class="block bg-teal-700 hover:bg-teal-800 text-white text-sm font-semibold tracking-wide uppercase shadow rounded cursor-pointer px-6 py-3"
                 />
               </div>
