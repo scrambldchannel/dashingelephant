@@ -888,9 +888,9 @@
   
   */
 
-  .language-inline-text {
-    color: yellow;
-    background-color: blue;
+  .inline-language-text {
+    @apply text-teal-700;
+    @apply bg-gray-300;
   }
 
 
