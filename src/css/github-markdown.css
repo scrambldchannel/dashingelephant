@@ -888,11 +888,16 @@
   
   */
 
+  .language-inline-text {
+    color: yellow;
+    background-color: blue;
+  }
+
+
 .gridsome-code-title {
   position: relative;
   margin-bottom: -0.8em;
-  /*    @apply text-teal-700;*/
-  color: yellow;
+  @apply text-teal-700;
   @apply bg-gray-300;
   font-size: 0.875rem;
   padding-left: 1rem;
@@ -911,7 +916,3 @@ code[class*="language-inline-"], pre[class*="language-inline-"] {
   @apply bg-gray-300;
 }
 
-.language-inline-text code {
-  @apply text-teal-700;
-  @apply bg-gray-300;
-}
