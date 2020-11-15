@@ -27,7 +27,7 @@ export default function (Vue, { router, head, isClient }) {
 
   head.meta.push({
     name: 'description',
-    content: 'Code and Cricket'
+    content: 'Dashing Elephant'
   })
 
   head.meta.push({

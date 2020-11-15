@@ -5,9 +5,9 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Code and Cricket',
-  siteDescription: 'Code and Cricket',
-  siteUrl: 'https://codeandcricket.netlify.com',
+  siteName: 'Dashing Elephant',
+  siteDescription: 'Dashing Elephant',
+  siteUrl: 'https://dashingelephant.xyz',
   plugins: [
     {
       use: 'gridsome-plugin-tailwindcss',
@@ -43,14 +43,14 @@ module.exports = {
       options: {
         contentTypeName: 'Post',
         feedOptions: {
-          title: 'Code and Cricket',
-          feed_url: 'https://codeandcricket.netlify.com/rss.xml',
-          site_url: 'https://codeandcricket.netlify.com/'
+          title: 'Dashing Elephant',
+          feed_url: 'https://dashingelephant.xyz/rss.xml',
+          site_url: 'https://dashingelephant.xyz/'
         },
         feedItemOptions: node => ({
           title: node.title,
           description: node.summary,
-          url: 'https://codeandcricket.netlify.com' + node.path,
+          url: 'https://dashingelephant.xyz' + node.path,
           author: 'Alexander Sutcliffe',
           date: node.date
         }),

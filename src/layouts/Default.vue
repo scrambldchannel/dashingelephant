@@ -12,13 +12,13 @@
             v-if="theme === 'theme-light'"
             class="uppercase tracking-wide font-bold text-copy-primary hover:text-gray-600"
             to="/"
-            >Code and Cricket</g-link
+            >dashingelephant.xyz</g-link
           >
           <g-link
             v-else
             class="uppercase tracking-wide font-bold text-copy-primary hover:text-gray-600"
             to="/"
-            >Code and Cricket</g-link
+            >dashingelephant.xyz</g-link
           >
         </div>
         <div class="block lg:hidden">
