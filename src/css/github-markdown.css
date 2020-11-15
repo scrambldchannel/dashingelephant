@@ -947,3 +947,22 @@
   }
 
   /* purgecss end ignore */
+
+
+  /* override some styling for code blocks
+    this is a bit of a hack, maybe all this css should be bundled into main.css? 
+  
+  */ 
+  .gridsome-code-title {
+    position: relative;
+    margin-bottom: -0.8em;
+    background-color: #2C7A7B;
+    color: #f7fafc;
+    font-size: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+  
