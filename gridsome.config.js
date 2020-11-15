@@ -13,6 +13,13 @@ module.exports = {
       use: 'gridsome-plugin-tailwindcss',
     },
     {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'G-WRGEWH3MGG'
+      }
+    },
+
+    {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'blog/**/*.md',
