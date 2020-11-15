@@ -131,12 +131,13 @@
               <div class="flex flex-wrap mb-6 -mx-4">
                 <div class="w-full md:w-1/2 mb-6 md:mb-0 px-4">
                   <label class="block mb-2 text-copy-primary" for="name">
-                    Name
+                    Name:
                   </label>
 
                   <input
                     type="text"
                     name="name"
+                    v-model="formData.name" 
                     id="name"
                     placeholder="Ignatius J. Reilly"
                     class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-teal-700 mb-2 p-4"
@@ -146,12 +147,13 @@
 
                 <div class="w-full px-4 md:w-1/2">
                   <label class="block text-copy-primary mb-2" for="email">
-                    Email Address
+                    Email Address:
                   </label>
 
                   <input
                     type="email"
                     name="email"
+                    v-model="formData.email"
                     id="email"
                     placeholder="ignatius@gmail.com"
                     class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-teal-700 mb-2 p-4"
@@ -162,15 +164,16 @@
 
               <div class="w-full mb-12">
                 <label class="block text-copy-primary mb-2" for="message">
-                  Message
+                  Message:
                 </label>
 
                 <textarea
                   id="message"
                   rows="5"
                   name="message"
+                  v-model="formData.message"
                   class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none appearance-none focus:border-teal-700 mb-2 px-4 py-4"
-                  placeholder="Enter your message here."
+                  placeholder="Enter your message here...."
                   required
                 ></textarea>
               </div>
