@@ -881,6 +881,15 @@
   padding-left: 128px!important;
 }
 
+/* this gets applied locally but not on netlify :(
+
+  */
+
+  code[class*="language-inline-"], pre[class*="language-inline-"] {
+    @apply text-teal-700;
+    @apply bg-gray-300;
+  }
+
 /* purgecss end ignore */
 
 /* override some styling for code blocks
@@ -901,11 +910,3 @@
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-/* this gets applied locally but not on netlify :(
-
-  */
-
-code[class*="language-inline-"], pre[class*="language-inline-"] {
-  @apply text-teal-700;
-  @apply bg-gray-300;
-}
