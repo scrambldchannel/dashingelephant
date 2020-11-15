@@ -19,12 +19,12 @@ I wanted an excuse to explore TM1py in more depth and had been thinking for a wh
 
 TM1py requires python 3.5 or greater and can be installed using pip, as can pytest.
 
-```sh
-$ pip install TM1py
+```bash
+pip install TM1py
 ```
 
-```sh
-$ pip install pytest
+```bash
+pip install pytest
 ```
 
 ### Create a PoC of a test in pytest
@@ -87,6 +87,6 @@ def test_value(tm1_dev):
 
 The tests can now be run from the command line with:
 
-```sh
+```bash
 $ pytest ./test_poc.py
 ```

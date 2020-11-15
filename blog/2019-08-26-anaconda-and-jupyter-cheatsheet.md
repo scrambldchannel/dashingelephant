@@ -18,7 +18,7 @@ Just pull the latest installer from [their website](https://www.google.com "Down
 
 Eg using Linux, wherever you've downloaded the installer(obviously full filename to match whatever you've downloaded):
 
-```shell
+```bash
 $ source ./Anaconda3-2019.07-Linux-x86_64.sh
 ```
 
@@ -32,7 +32,7 @@ You can use the GUI (ie anaconda-navigator) but can do most things from the comm
 
 This will give you a list of environments this conda knows about.
 
-```shell
+```bash
 $ conda env list
 # conda environments:
 #
@@ -45,7 +45,7 @@ $
 
 You probably want to create a new environment for a new project and install any relevant libraries within it.
 
-```shell
+```bash
 $ conda create -n testenv python=3.7 anaconda
 ```
 
@@ -53,7 +53,7 @@ $ conda create -n testenv python=3.7 anaconda
 
 Once you've created an environment, activate it install packages of interest. 
 
-```shell
+```bash
 $ conda activate testenv
 (testenv) $
 ```
@@ -66,7 +66,7 @@ Libraries can be installed with either onda or pip. As a basic process, I search
 
 Eg. this looks for a package and tells you it's available.
 
-```shell
+```bash
 (testenv) $ conda search plotly
 Loading channels: ...working... done
 # Name                       Version           Build  Channel             
@@ -81,7 +81,7 @@ plotly                        2.0.15  py36hd032def_0  pkgs/main
 
 We don't need to look any further, just install it.
 
-```shell
+```bash
 (testenv) $ conda install plotly
 ```
 
@@ -89,7 +89,7 @@ We don't need to look any further, just install it.
 
 If you get a response like this, it's not available in the conda distribution you have. 
 
-```shell
+```bash
 (testenv) $ conda search geoplotlib
 Loading channels: done
 No match found for: geoplotlib. Search: *geoplotlib*
@@ -101,7 +101,7 @@ No match found for: geoplotlib. Search: *geoplotlib*
 
 If it's a library that's available on PyPi, you should be able to install it by doing the following.
 
-```shell
+```bash
 (testenv) $ pip install geoplotlib
 Collecting geoplotlib
 [...]
@@ -112,7 +112,7 @@ Successfully installed geoplotlib-0.3.2
 
 Once you are done fiddling with a given environment, you can deactivate it so that anything you do won't impact it.
 
-```shell
+```bash
 (testenv) $ conda deactivate
 $
 ```
@@ -125,7 +125,7 @@ I find it useful to create a single conda environment to launch jupyter notebook
 
 This makes a kernel based on this environment available for environments running nb_conda_kernels.
 
-```shell
+```bash
 (testenv) $ conda install ipykernel
 ```
 
@@ -133,7 +133,7 @@ This makes a kernel based on this environment available for environments running
 
 To launch our notebook server, we want to create a separate env.
 
-```shell
+```bash
 $ conda create -n notebook python=3.7 anaconda
 ```
 
@@ -141,20 +141,20 @@ $ conda create -n notebook python=3.7 anaconda
 
 Activate the new notebook env
 
-```shell
+```bash
 $ conda activate notebook
 (notebook) $ 
 ```
 
 Install nb_conda_kernels
 
-```shell
+```bash
 $ conda install nb_conda_kernels
 ```
 
 ### Launch a notebook server 
 
-```shell
+```bash
 (notebook) $ jupyter notebook
 ```
 

@@ -22,19 +22,19 @@ My initial setup was pretty basic and it was only when I started working with th
 
 Pre-commit is written in Python and can be installed using pip:
 
-```sh
+```bash
 $ pip install pre-commit
 ```
 
 To use it in a project, run it in the root of the project's git repository:
 
-```sh
+```bash
 $ pre-commit install
 ```
 
 For it to do something, you need to define a configuration in a `.pre-commit-config.yaml` file. Out of the box, there's a command to send a sample config to stdout:
 
-```sh
+```bash
 $ pre-commit sample-config
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
@@ -134,7 +134,7 @@ But flake8 insisted it should look this and complained:
     install_requires=["Click", ],
 ```
 
-```sh
+```bash
 setup.py:7:30: E231 missing whitespace after ','
 ```
 
@@ -158,7 +158,7 @@ Once you've installed pre-commit in a git repo the checks will all run every tim
 
 You can also run the various checks from the command line outside of a commit. This gives you finer-grained control and also allows running tools like black and isort on demand from their repos without needing to install them. For example, all checks can be run on all files with the following:
 
-```sh
+```bash
 $ pre-commit run --all-files
 ```
 
@@ -166,13 +166,13 @@ This can be particularly useful if you're adding a set of hooks to an existing p
 
 Or you can use the `--files` option to run hooks on a list of specific files:
 
-```sh
+```bash
 $ pre-commit run --files app.py class.py
 ```
 
 It's also possible to run only a specific hook. The command below will apply black to all files, irrespective of whether they are staged:
 
-```sh
+```bash
 $ pre-commit run black --all-files
 ```
 

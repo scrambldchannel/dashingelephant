@@ -17,7 +17,7 @@ This is a list of common git commands I tend to use, aimed at a relative newbie.
 
 Probably one of the first operations you want to use is to clone a remote repository, e.g. one that exists on Github:
 
-```sh
+```bash
 git clone https://github.com/scrambldchannel/tm1py
 ```
 
@@ -25,14 +25,14 @@ git clone https://github.com/scrambldchannel/tm1py
 
 When you're hacking on code, you probably want to do it in a separate branch. A branch can be created and then checked out by doing the following:
 
-```sh
+```bash
 git branch features/my_new_feature
 git checkout features/my_new_feature
 ```
 
 This is fine, but I've lost count of the times I've created the branch but forgotten to check it out. This has sometimes led me to commit changes to the wrong branch and having to clean up the mess. So I generally use this command to both steps in a single line:
 
-```sh
+```bash
 git checkout -b features/my_new_feature
 ```
 
@@ -40,7 +40,7 @@ git checkout -b features/my_new_feature
 
 Once you've changed some files, you want to save them to the repository. This command stages changes to a file which means it will be committed to the repository on the next commit:
 
-```sh
+```bash
 git stage TM1py/Objects/Process.py Tests/Process.py
 ```
 
@@ -48,7 +48,7 @@ git stage TM1py/Objects/Process.py Tests/Process.py
 
 This will commit all staged changes to the repository with the commit message you provide. Note, this is the point it which it can be worth taking a deep breath and checking that you're really doing what you want.
 
-```sh
+```bash
 git commit -m "added my cool new feature"
 ```
 
@@ -56,7 +56,7 @@ git commit -m "added my cool new feature"
 
 What you might want to do before committing is to check which files are staged:
 
-```sh
+```bash
 git diff --name-only --cached
 ```
 
@@ -64,7 +64,7 @@ git diff --name-only --cached
 
 Once you've committed some changes to a branch, you may want to add these changes into another branch. For example, I might want to merge the changes made in features/my_new_feature into my master branch:
 
-```sh
+```bash
 git checkout master
 git merge features/my_new_feature
 ```
@@ -73,7 +73,7 @@ git merge features/my_new_feature
 
 Once your changes have been merged into master, you can delete the branch you used to develop the feature:
 
-```sh
+```bash
 git branch -D features/my_new_feature
 ```
 
@@ -81,13 +81,13 @@ git branch -D features/my_new_feature
 
 When working on a project hosted remotely (e.g. on Github) you will eventually want to push your changes up to the remote git repository. If the branch you're working on already exists, you can push changes with this command:
 
-```sh
+```bash
 git push
 ```
 
 If the branch doesn't already exist on the remote repo, you can create it and push to it with this command:
 
-```sh
+```bash
 git push --set-upstream origin features/my_new_feature
 ```
 
@@ -95,7 +95,7 @@ git push --set-upstream origin features/my_new_feature
 
 When working on projects owned by other people on Github, the workflow I follow is to create my own fork on Github, clone it locally, create a branch for what I'm working on, push it to Github and then create a PR from there. Adding an upstream allows me to receive any changes made by the owner into my fork.
 
-```sh
+```bash
 git remote add upstream https://github.com/cubewise-code/tm1py.git
 ```
 
@@ -103,7 +103,7 @@ git remote add upstream https://github.com/cubewise-code/tm1py.git
 
 When changes have been made upstream, I fetch changes and rebase my local master branch before pushing it my remote fork. Changes can be fetched from upstream with this command:
 
-```sh
+```bash
 git fetch upstream
 ```
 
@@ -111,7 +111,7 @@ git fetch upstream
 
 I can rebase the branch I'm working on with a remote fork (in this case upstream) in order to apply any changes made upstream to my local fork. This is a good idea before raising a PR and ensures your PR is easier to understand.
 
-```sh
+```bash
 git rebase upstream/master
 ```
 
@@ -121,6 +121,6 @@ In this case, I can then push my changes up to my remote fork so it is tracking 
 
 Sometimes someone will create a new fork in the upstream repository that I wish to clone locally. Or perhaps I want to check out a branch I've pushed to my remote fork repository from a different development environment.
 
-```sh
+```bash
 git checkout --track upstream/issue/cube-get-last-data-update
 ```

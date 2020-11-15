@@ -133,7 +133,7 @@ with DAG(dag_id="example_tm1_to_s3", schedule_interval="@daily", default_args=de
 
 DAGS need to be saved in Airflow's DAG folder as ```*.py``` files. Airflow has a built in [web UI](https://airflow.apache.org/docs/stable/ui.html) that can manage DAGs. They can also be managed from a [cli](https://airflow.apache.org/docs/stable/usage-cli.html) which can be useful for testing purposes.
 
-```sh
+```bash
 airflow trigger_dag example_tm1_to_s3
 ```
 
