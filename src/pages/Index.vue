@@ -120,7 +120,7 @@
             <form
               name="contact"
               method="post"
-              v-on:submit.prevent="handleSubmit"
+              @submit.prevent="handleSubmit"
               action="/success/"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
