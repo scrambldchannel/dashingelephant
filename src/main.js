@@ -6,8 +6,8 @@ import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
 
 require("gridsome-plugin-remark-prismjs-all/themes/night-owl.css");
-//require("prismjs/plugins/line-numbers/prism-line-numbers.css");
-//require("prismjs/plugins/command-line/prism-command-line.css")
+require("prismjs/plugins/line-numbers/prism-line-numbers.css");
+require("prismjs/plugins/command-line/prism-command-line.css")
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
