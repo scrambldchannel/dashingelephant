@@ -143,6 +143,40 @@ module.exports = {
 }
 ```
 
-It also suggests adding some extra css however it seemed as though this wasn't actually necessary as everything was already setup in theme as far as I could tell. What I did run into was a bit of an issue styling inline code blocks. I am working with an overall site theme that supports light and dark modes so I ended up manually styling the inline blocks to give the result I wanted. This was pretty specific though and shouldn't be necessary for everyone.
+It also suggests adding some extra css to theme the titles, highlighting and line numbers. This isn't strictly necessary if you're using a theme bundled with the plugin but might be if you are using a standard prism theme. I'm using the night-owl theme and am pretty happy with the result out of the box. That said, I wanted to override the styling of the code block headings to fit in with my site's theme. I overwrote the css with the following:
 
-I'm really happy with the result. In the code blocks above I've used a bunch of other options for formatting code blocks with the help of the demo page, I might create another post to give myself a cheatsheet for building them in future.
+```css
+  .gridsome-code-title {
+    position: relative;
+    margin-bottom: -0.8em;
+    background-color: #2C7A7B;
+    color: #f7fafc;
+    font-size: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+```
+
+The other issue is with the styling of inline code blocks. Initially I had a css clash for code blocks causing the background to be overwritten from my prism theme which I fixed easily enough but then I was left with lots of inline sentences with a black background on a white page. It didn't look great and I wanted my theme to take care of them rather than the plugin.
+
+I thought it would be possible to switch of rendering of inline blocks by adding the following config option but this didn't seem to have any effect. It's possible that it only turns off syntax highlighting within code blocks rather than all the other formatting. 
+
+```js{7}{codeTitle: "gridsome.config.js"}
+        // ...
+        remark: {
+          plugins: [
+            [
+              'gridsome-plugin-remark-prismjs-all', {
+                showLineNumbers: false, //  don't enable for every code block, use on a case by case basis
+                noInlineHighlight: true,
+      
+              },
+            ],
+          ],
+        }
+```
+
+I couldn't see an obvious way to add style to only the inline blocks either and my experiements with css so far have only resulted in fudges that only solve part of the problem. I tried manually overriding the css but this would result in doing something undesirable to the multiline blocks. I've left it as it is for now, hopefully I can find a work around later.
