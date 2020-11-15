@@ -154,6 +154,7 @@
                   <input
                     type="email"
                     name="email"
+                    v-model="formData.email"
                     id="email"
                     placeholder="ignatius@gmail.com"
                     class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-teal-700 mb-2 p-4"
@@ -171,7 +172,6 @@
                   rows="5"
                   form="contact"
                   name="message"
-                  v-model="formData.message"
                   class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none appearance-none focus:border-teal-700 mb-2 px-4 py-4"
                   placeholder="Enter your message here...."
                   required
