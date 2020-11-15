@@ -22,19 +22,19 @@ My initial setup was pretty basic and it was only when I started working with th
 
 Pre-commit is written in Python and can be installed using pip:
 
-```bash
+```bash{promptUser: "alex"}{promptHost: "thinky"}
 $ pip install pre-commit
 ```
 
 To use it in a project, run it in the root of the project's git repository:
 
-```bash
+```bash{promptUser: "alex"}{promptHost: "thinky"}
 $ pre-commit install
 ```
 
 For it to do something, you need to define a configuration in a `.pre-commit-config.yaml` file. Out of the box, there's a command to send a sample config to stdout:
 
-```bash
+```bash{promptUser: "alex"}{promptHost: "thinky"}
 $ pre-commit sample-config
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
@@ -172,7 +172,7 @@ $ pre-commit run --files app.py class.py
 
 It's also possible to run only a specific hook. The command below will apply black to all files, irrespective of whether they are staged:
 
-```bash
+```bash{promptUser: "alex"}{promptHost: "thinky"}
 $ pre-commit run black --all-files
 ```
 

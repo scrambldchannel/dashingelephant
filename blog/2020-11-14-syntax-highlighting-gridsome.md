@@ -14,7 +14,6 @@ The first issue was choosing a plugin to handle it. Having checked the list of p
 * [gridsome-plugin-remark-shiki](https://gridsome.org/plugins/gridsome-plugin-remark-shiki)
 * [gridsome-plugin-remark-prismjs-all](https://gridsome.org/plugins/gridsome-plugin-remark-prismjs-all)
 
-
 ### @gridsome/remark-prismjs
 
 Going by nothing other than the download numbers, I thought I'd try the prismjs version. I also noted that it seemed to be part of gridsome core and the docs were pretty clear. I updated my `main.js` and `gridsome.config.js` as follows:

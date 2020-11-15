@@ -17,7 +17,7 @@ This is a list of common git commands I tend to use, aimed at a relative newbie.
 
 Probably one of the first operations you want to use is to clone a remote repository, e.g. one that exists on Github:
 
-```bash
+```bash{promptUser: "alex"}{promptHost: "thinky"}
 git clone https://github.com/scrambldchannel/tm1py
 ```
 
@@ -95,7 +95,7 @@ git push --set-upstream origin features/my_new_feature
 
 When working on projects owned by other people on Github, the workflow I follow is to create my own fork on Github, clone it locally, create a branch for what I'm working on, push it to Github and then create a PR from there. Adding an upstream allows me to receive any changes made by the owner into my fork.
 
-```bash
+```bash{promptUser: "alex"}{promptHost: "thinky"}
 git remote add upstream https://github.com/cubewise-code/tm1py.git
 ```
 
@@ -103,7 +103,7 @@ git remote add upstream https://github.com/cubewise-code/tm1py.git
 
 When changes have been made upstream, I fetch changes and rebase my local master branch before pushing it my remote fork. Changes can be fetched from upstream with this command:
 
-```bash
+```bash{promptUser: "alex"}{promptHost: "thinky"}
 git fetch upstream
 ```
 
@@ -111,7 +111,7 @@ git fetch upstream
 
 I can rebase the branch I'm working on with a remote fork (in this case upstream) in order to apply any changes made upstream to my local fork. This is a good idea before raising a PR and ensures your PR is easier to understand.
 
-```bash
+```bash{promptUser: "alex"}{promptHost: "thinky"}
 git rebase upstream/master
 ```
 
@@ -121,6 +121,6 @@ In this case, I can then push my changes up to my remote fork so it is tracking 
 
 Sometimes someone will create a new fork in the upstream repository that I wish to clone locally. Or perhaps I want to check out a branch I've pushed to my remote fork repository from a different development environment.
 
-```bash
+```bash{promptUser: "alex"}{promptHost: "thinky"}
 git checkout --track upstream/issue/cube-get-last-data-update
 ```

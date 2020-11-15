@@ -16,10 +16,10 @@ Honestly, I fell into using Anaconda via a group project I joined a while back. 
 
 Just pull the latest installer from [their website](https://www.google.com "Download page for Anaconda"). Download the appropriate bundle for your OS and architecture and follow the installation instructions. I am exclusively using the 3.7 distribution and don't have any legacy code I depend on for my projects.
 
-Eg using Linux, wherever you've downloaded the installer(obviously full filename to match whatever you've downloaded):
+Eg using Linux, wherever you've downloaded the installer (obviously full filename to match whatever you've downloaded):
 
-```bash
-$ source ./Anaconda3-2019.07-Linux-x86_64.sh
+```bash{promptUser: "alex"}{promptHost: "thinky"}
+source ./Anaconda3-2019.07-Linux-x86_64.sh
 ```
 
 I generally install it in the default location, i.e. an anaconda directory in ~/
@@ -32,8 +32,10 @@ You can use the GUI (ie anaconda-navigator) but can do most things from the comm
 
 This will give you a list of environments this conda knows about.
 
-```bash
-$ conda env list
+```bash{promptUser: "alex"}{promptHost: "thinky"}
+conda env list
+```
+```
 # conda environments:
 #
 base                  *  /home/alex/anaconda3
@@ -45,76 +47,77 @@ $
 
 You probably want to create a new environment for a new project and install any relevant libraries within it.
 
-```bash
-$ conda create -n testenv python=3.7 anaconda
+```bash{promptUser: "alex"}{promptHost: "thinky"}
+conda create -n testenv python=3.7 anaconda
 ```
 
 #### Activate
 
-Once you've created an environment, activate it install packages of interest. 
+Once you've created an environment, activate it and install packages of interest. 
 
-```bash
-$ conda activate testenv
-(testenv) $
+```bash{promptUser: "alex"}{promptHost: "thinky"}
+conda activate testenv
 ```
 
 ### Installing libraries
 
-Libraries can be installed with either onda or pip. As a basic process, I search for them on conda first and install if available and install them via pip if not. 
+Libraries can be installed with either conda or pip. As a basic rule, I search for them on conda first and install if available and install them via pip if not. 
 
 #### Is it in the conda repos?
 
-Eg. this looks for a package and tells you it's available.
+This looks for a package and tells you it's available.
 
-```bash
-(testenv) $ conda search plotly
+```bash{promptUser: "alex"}{promptHost:"thinky(testenv)"}
+conda search plotly
+```
+```
 Loading channels: ...working... done
 # Name                       Version           Build  Channel             
 plotly                        2.0.15  py27h139127e_0  pkgs/main           
 plotly                        2.0.15  py35h43bf465_0  pkgs/main           
 plotly                        2.0.15  py36hd032def_0  pkgs/main
 [...]
-(testenv) $
 ```
 
 #### Great, install it from conda
 
 We don't need to look any further, just install it.
 
-```bash
-(testenv) $ conda install plotly
+```bash{promptUser: "alex"}{promptHost: "thinky(testenv)"}
+conda install plotly
 ```
 
 ##### It might not exist in the conda repo though
 
 If you get a response like this, it's not available in the conda distribution you have. 
 
-```bash
-(testenv) $ conda search geoplotlib
+```bash{promptUser: "alex"}{promptHost: "thinky(testenv)"}
+conda search geoplotlib
+```
+```
 Loading channels: done
 No match found for: geoplotlib. Search: *geoplotlib*
 [...]
-(testenv) $
 ```
 
 ##### Try installing via pip instead
 
 If it's a library that's available on PyPi, you should be able to install it by doing the following.
 
-```bash
-(testenv) $ pip install geoplotlib
+```bash{promptUser: "alex"}{promptHost: "thinky(testenv)"}
+pip install geoplotlib
+```
+```
 Collecting geoplotlib
 [...]
 Successfully installed geoplotlib-0.3.2
-(testenv) $
 ```
 #### Deactivate
 
 Once you are done fiddling with a given environment, you can deactivate it so that anything you do won't impact it.
 
-```bash
-(testenv) $ conda deactivate
-$
+```bash{promptUser: "alex"}{promptHost: "thinky(testenv)"}
+conda deactivate
 ```
 
 ## Managing Jupyter kernels and conda environments
@@ -125,37 +128,36 @@ I find it useful to create a single conda environment to launch jupyter notebook
 
 This makes a kernel based on this environment available for environments running nb_conda_kernels.
 
-```bash
-(testenv) $ conda install ipykernel
+```bash{promptUser: "alex"}{promptHost: "thinky(testenv)"}
+conda install ipykernel
 ```
 
 ### Create the notebook env
 
 To launch our notebook server, we want to create a separate env.
 
-```bash
-$ conda create -n notebook python=3.7 anaconda
+```bash{promptUser: "alex"}{promptHost: "thinky(testenv)"}
+conda create -n notebook python=3.7 anaconda
 ```
 
 #### Activate the notebook env and install nb_conda_kernels
 
 Activate the new notebook env
 
-```bash
-$ conda activate notebook
-(notebook) $ 
+```bash{promptUser: "alex"}{promptHost: "thinky(testenv)"}
+conda activate notebook
 ```
 
 Install nb_conda_kernels
 
-```bash
-$ conda install nb_conda_kernels
+```bash{promptUser: "alex"}{promptHost: "thinky(notebook)"}
+conda install nb_conda_kernels
 ```
 
 ### Launch a notebook server 
 
-```bash
-(notebook) $ jupyter notebook
+```bash{promptUser: "alex"}{promptHost: "thinky(notebook)"}
+jupyter notebook
 ```
 
 #### Open the notebook base url in your browser
