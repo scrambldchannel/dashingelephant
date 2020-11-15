@@ -119,6 +119,7 @@
           <div class="text-lg sm:text-lg mb-16">
             <form
               name="contact"
+              id="contact"
               method="post"
               @submit.prevent="handleSubmit"
               action="/success/"
@@ -169,10 +170,11 @@
 
                 <textarea
                   rows="5"
+                  form="contact"
                   name="message"
                   v-model="formData.message"
                   class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none appearance-none focus:border-teal-700 mb-2 px-4 py-4"
-                  placeholder="Enter your friendly message"
+                  placeholder="Enter your message here...."
                   required
                 ></textarea>
               </div>
