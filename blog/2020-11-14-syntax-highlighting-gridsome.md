@@ -101,7 +101,7 @@ This is another third party plugin that uses the library prismjs. It wasn't enti
 npm install gridsome-plugin-remark-prismjs-all
 ```
 
-The plugin only comes bundled with a couple of themes, not clear how easy it is to get more but this gives me a nice dark look. According to the examples, for line numbers, it also needs `prism-line-numbers.css` and for prettifying command prompts in blocks, it uses `prism-command-line.css`. Note, in practice, I didn't actually find these require statements necessary but I'm not entirely sure why.
+The plugin only comes bundled with a couple of themes, not clear how easy it is to get more but this gives me a nice dark look. According to the examples, for line numbers, it also needs `prism-line-numbers.css` and for prettifying command prompts in blocks, it uses `prism-command-line.css`.
 
 ```js{1-3}{codeTitle: "src/main.js"}
 require("gridsome-plugin-remark-prismjs-all/themes/night-owl.css");
