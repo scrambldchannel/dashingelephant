@@ -1,113 +1,90 @@
 <template>
-  <!-- The Timeline -->
   <div>
-    <h2 class="font-bold mb-16 text-2xl">Career Overview</h2>
+    <div class="font-bold mb-16 text-2xl">Career Overview</div>
 
     <section id="cd-timeline" class="cd-container">
       <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture"></div>
-
-        <div class="cd-timeline-content">
-          <h2>2003</h2>
-          <div class="timeline-content-info">
-            <p>
-              Completed a BSc in Computing Science at the University of NSW,
-              Sydney. Got hooked on Linux and learned Python 1.x.
-            </p>
-          </div>
+        <div class="cd-timeline-img"></div>
+        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
+          <div>2003</div>
+          <p class="text-sm text-gray-600">
+            Completed a BSc in Computing Science at the University of NSW,
+            Sydney. Got hooked on Linux and learned Python 1.x.
+          </p>
         </div>
-        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-block -->
 
       <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie"></div>
-        <!-- cd-timeline-img -->
+        <div class="cd-timeline-img"></div>
 
-        <div class="cd-timeline-content">
-          <h2>2004</h2>
-          <p>
+        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
+          <div>2004</div>
+          <p class="text-sm text-gray-600">
             Moved to Europe in search of fame and fortune! Expected to be back
             within two years but I've my home in Europe now.
           </p>
         </div>
-        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-block -->
       <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie"></div>
-        <!-- cd-timeline-img -->
+        <div class="cd-timeline-img"></div>
 
-        <div class="cd-timeline-content">
-          <h2>2005 - 2006</h2>
-          <p>
+        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
+          <div>2005 - 2006</div>
+          <p class="text-sm text-gray-600">
             Systems Analyst at a large telco, built my first Busines Objects
             report and automated everything I could with VBScript.
           </p>
         </div>
-        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-block -->
       <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture"></div>
-        <!-- cd-timeline-img -->
+        <div class="cd-timeline-img"></div>
 
-        <div class="cd-timeline-content">
-          <h2>2007 - 2011</h2>
-          <p>
+        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
+          <div>2007 - 2011</div>
+          <p class="text-sm text-gray-600">
             Worked as an analyst / developer at RBS, a large bank in Edinburgh.
             Spent my days with Cognos, Oracle and Business Objects.
           </p>
         </div>
-        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-block -->
 
       <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location"></div>
-        <!-- cd-timeline-img -->
+        <div class="cd-timeline-img"></div>
 
-        <div class="cd-timeline-content">
-          <h2>2011 - 2013</h2>
-          <p>
+        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
+          <div>2011 - 2013</div>
+          <p class="text-sm text-gray-600">
             First steps as a freelance consultant, worked on several large scale
             projects implementing TM1 as a planning solution.
           </p>
         </div>
-        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-block -->
       <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location"></div>
+        <div class="cd-timeline-img"></div>
 
-        <div class="cd-timeline-content">
-          <h2>2013 - 2018</h2>
-          <p>
+        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
+          <div>2013 - 2018</div>
+          <p class="text-sm text-gray-600">
             Joined Roche in Basel as TM1 specialist, held leadership roles and
             also worked as an architect and PM.
           </p>
         </div>
-        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-block -->
 
       <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location"></div>
+        <div class="cd-timeline-img"></div>
 
-        <div class="cd-timeline-content">
-          <h2>2019 - present</h2>
-          <p>
+        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
+          <div>2019 - present</div>
+          <p class="text-sm text-gray-600">
             Came to Berlin to be with my partner and went back to freelancing.
             Have consulted on two finance transformations as a TM1 / planning
             specialists.
           </p>
         </div>
-        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-block -->
     </section>
   </div>
-  <!-- cd-timeline -->
 </template>
 
 <script>
@@ -120,18 +97,6 @@ export default {
 </script>
 
 <style>
-.cd-container {
-  width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 10%;
-  border-radius: 20px;
-}
-.cd-container::after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
 /* --------------------------------
 
@@ -153,8 +118,6 @@ Main components
   @apply bg-gray-400;
 }
 @media only screen and (min-width: 1170px) {
-  #cd-timeline {
-  }
   #cd-timeline::before {
     left: 50%;
     margin-left: -2px;
@@ -163,7 +126,6 @@ Main components
 
 .cd-timeline-block {
   position: relative;
-  margin: 2em 0;
 }
 .cd-timeline-block:after {
   content: "";
@@ -213,15 +175,9 @@ Main components
   position: relative;
   margin-left: 60px;
   margin-right: 30px;
-  @apply bg-gray-100;
   border-radius: 2px;
   padding: 1em;
   .timeline-content-info {
-    background: #2B343A;
-    padding: 5px 10px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 12px;
-    box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.08);
     border-radius: 2px;
     i {
       margin-right: 5px;
@@ -245,27 +201,13 @@ Main components
   display: table;
   clear: both;
 }
-.cd-timeline-content h2 {
-  color: black;
-}
-.cd-timeline-content p,
-.cd-timeline-content {
-  @apply text-gray-600;
-  font-size: 13px;
-  font-size: 0.8125rem;
-}
 .cd-timeline-content {
   display: inline-block;
-}
-.cd-timeline-content p {
-  margin: 1em 0;
-  line-height: 1.6;
 }
 
 .cd-timeline-content::before {
   content: "";
   position: absolute;
-  top: 16px;
   right: 100%;
   height: 0;
   width: 0;
@@ -273,20 +215,10 @@ Main components
   border-right: 7px solid #333C42;
 }
 
-@media only screen and (min-width: 768px) {
-  .cd-timeline-content h2 {
-    font-size: 1rem;
-  }
-  .cd-timeline-content p {
-    font-size: 14px;
-    @apply text-gray-600;
-  }
-}
 @media only screen and (min-width: 1170px) {
   .cd-timeline-content {
     margin-left: 0;
     width: 36%;
-    margin: 0 5%;
   }
   .cd-timeline-content::before {
     top: 24px;
@@ -295,32 +227,25 @@ Main components
     border-left-color: #333C42;
   }
   .cd-timeline-content .cd-date {
-    position: absolute;
     width: 50%;
     left: 150%;
-    top: 6px;
-    font-weight: bold;
-    text-align: center;
-    @apply bg-gray-100;
-    font-size: 16px;
-  }
+
+}
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
-    top: 24px;
     left: auto;
     right: 100%;
     border-color: transparent;
     border-right-color: #333C42;
   }
-  .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
+  .cd-timeline-block:nth-child(even) .cd-timeline-content  {
     float: right;
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
     left: auto;
     right: 150%;
-    text-align: center;
   }
 }
 </style>
