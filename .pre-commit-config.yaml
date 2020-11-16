@@ -10,3 +10,8 @@ repos:
         hooks:
         -   id: htmlhint
         -   id: htmllint
+    - repo: https://github.com/codespell-project/codespell
+      rev: v1.17.1
+      hooks:
+        - id: codespell
+          files: \.(md|rst)$
