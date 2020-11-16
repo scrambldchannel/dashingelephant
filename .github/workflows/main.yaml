@@ -10,5 +10,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v1
         with:
+          build: npm run build
           start: gridsome develop
           wait-on: http://localhost:8080
