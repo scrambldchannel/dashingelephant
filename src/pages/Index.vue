@@ -33,7 +33,7 @@
         class="projects container-inner mx-auto text-xl border-t border-gray-500 border-b py-16 mb-16 relative flex flex-wrap"
       >
         <div class="md:w-1/2 px-3">
-          <h2 class="font-bold mb-16 text-2xl" id="projects">Tech Skills</h2>
+          <h2 class="font-bold mb-16 text-2xl">Tech Skills</h2>
 
           <ul class="text-lg sm:text-lg space-y-6 mb-10">
             <li class="checkmark">
@@ -67,7 +67,7 @@
           </ul>
         </div>
         <div class="md:w-1/2 px-3 text-2xl">
-          <h2 class="font-bold mb-16" id="soft skills">Soft Skills</h2>
+          <h2 class="font-bold mb-16" >Soft Skills</h2>
 
           <ul class="text-lg sm:text-lg space-y-6 mb-10">
             <li class="checkmark">

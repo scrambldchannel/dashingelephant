@@ -1,114 +1,113 @@
 <template>
   <!-- The Timeline -->
-<div>
-            <h2 class="font-bold mb-16 text-2xl" >Career Overview</h2>
+  <div>
+    <h2 class="font-bold mb-16 text-2xl">Career Overview</h2>
 
+    <section id="cd-timeline" class="cd-container">
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture"></div>
 
-  <section id="cd-timeline" class="cd-container">
+        <div class="cd-timeline-content">
+          <h2>2003</h2>
+          <div class="timeline-content-info">
+            <p>
+              Completed a BSc in Computing Science at the University of NSW,
+              Sydney. Got hooked on Linux and learned Python 1.x.
+            </p>
+          </div>
+        </div>
+        <!-- cd-timeline-content -->
+      </div>
+      <!-- cd-timeline-block -->
 
-    <div class="cd-timeline-block">
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie"></div>
+        <!-- cd-timeline-img -->
 
-      <div class="cd-timeline-img cd-picture"></div>
-
-      <div class="cd-timeline-content">
-        <h2>2003</h2>
-        <div class="timeline-content-info">
+        <div class="cd-timeline-content">
+          <h2>2004</h2>
           <p>
-            Completed a BSc in Computing Science at the University of NSW,
-            Sydney. Got hooked on Linux and learned Python 1.x.
+            Moved to Europe in search of fame and fortune! Expected to be back
+            within two years but I've my home in Europe now.
           </p>
         </div>
+        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
+      <!-- cd-timeline-block -->
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie"></div>
+        <!-- cd-timeline-img -->
 
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-movie"></div>
-      <!-- cd-timeline-img -->
-
-      <div class="cd-timeline-content">
-        <h2>2004</h2>
-        <p>
-          Moved to Europe in search of fame and fortune! Expected to be back
-          within two years but life doesn't always go to plan.
-        </p>
+        <div class="cd-timeline-content">
+          <h2>2005 - 2006</h2>
+          <p>
+            Systems Analyst at a large telco, built my first Busines Objects
+            report and automated everything I could with VBScript.
+          </p>
+        </div>
+        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-movie"></div>
-      <!-- cd-timeline-img -->
+      <!-- cd-timeline-block -->
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture"></div>
+        <!-- cd-timeline-img -->
 
-      <div class="cd-timeline-content">
-        <h2>2005 - 2006</h2>
-        <p>
-          Systems Analyst at a large telco, built my first Busines Objects
-          report and automated everything I could with VBScript.
-        </p>
+        <div class="cd-timeline-content">
+          <h2>2007 - 2011</h2>
+          <p>
+            Worked as an analyst / developer at RBS, a large bank in Edinburgh.
+            Spent my days with Cognos, Oracle and Business Objects.
+          </p>
+        </div>
+        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-picture"></div>
-      <!-- cd-timeline-img -->
+      <!-- cd-timeline-block -->
 
-      <div class="cd-timeline-content">
-        <h2>2007 - 2011</h2>
-        <p>
-          Worked as an analyst / developer at RBS, a large bank in Edinburgh.
-          Worked with Cognos, Oracle and Business Objects.
-        </p>
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location"></div>
+        <!-- cd-timeline-img -->
+
+        <div class="cd-timeline-content">
+          <h2>2011 - 2013</h2>
+          <p>
+            First steps as a freelance consultant, worked on several large scale
+            projects implementing TM1 as a planning solution.
+          </p>
+        </div>
+        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
+      <!-- cd-timeline-block -->
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location"></div>
 
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-location"></div>
-      <!-- cd-timeline-img -->
-
-      <div class="cd-timeline-content">
-        <h2>2011 - 2013</h2>
-        <p>
-          First steps as a freelance consultant, worked on several large scale
-          projects to implement TM1 as a planning tool.
-        </p>
+        <div class="cd-timeline-content">
+          <h2>2013 - 2018</h2>
+          <p>
+            Joined Roche in Basel as TM1 specialist, held leadership roles and
+            also worked as an architect and PM.
+          </p>
+        </div>
+        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-location"></div>
+      <!-- cd-timeline-block -->
 
-      <div class="cd-timeline-content">
-        <h2>2013 - 2018</h2>
-        <p>
-          Joined Roche in Basel as TM1 specialist. Held leadership roles and
-          also worked as an architect and a PM.
-        </p>
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location"></div>
+
+        <div class="cd-timeline-content">
+          <h2>2019 - present</h2>
+          <p>
+            Came to Berlin to be with my partner and went back to freelancing.
+            Have consulted on two finance transformations as a TM1 / planning
+            specialists.
+          </p>
+        </div>
+        <!-- cd-timeline-content -->
       </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
-
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-location"></div>
-
-      <div class="cd-timeline-content">
-        <h2>2019 - present</h2>
-        <p>
-          Came to Berlin to be with my partner and went back to freelancing.
-          Have worked on two large finance transformation programmes.
-        </p>
-      </div>
-      <!-- cd-timeline-content -->
-    </div>
-    <!-- cd-timeline-block -->
-  </section>
-</div>  <!-- cd-timeline -->
+      <!-- cd-timeline-block -->
+    </section>
+  </div>
+  <!-- cd-timeline -->
 </template>
 
 <script>
