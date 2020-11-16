@@ -116,7 +116,7 @@
 
           <p class="mb-12 text-lg">
             Have a question or want to discuss an opportunity? I can be found on
-            the usual social networks or you can drop me a note using the form
+            the usual social networks or you can send me a note using the form
             below.
           </p>
 
