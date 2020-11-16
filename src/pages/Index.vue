@@ -1,20 +1,28 @@
 <template>
   <Layout>
     <div
+      id="about"
       class="hero container-inner mx-auto flex flex-col sm:flex-row justify-between py-16"
     >
-      <div class="font-bold w-full sm:w-3/5 text-center sm:text-left">
-        <div class="leading-tight text-4xl">Alexander Sutcliffe</div>
-        <div class="text-teal-700 leading-tight text-2xl">
+      <div class="w-full sm:w-3/5 text-center sm:text-left">
+        <div class="font-bold leading-tight text-4xl">Alexander Sutcliffe</div>
+        <div class="font-bold text-teal-700 leading-tight text-2xl">
           Business Intelligence Specialist
+        </div>
+        <div class="flex-1 text-ms xs:text-sm mt-6">
+          I'm an experienced Berlin based consultant with a passion for
+          leveraging technology to deliver data driven insights. I have worked
+          in a range of sectors and am comfortable in developer, analyst and
+          leadership roles. I am proficient with a wide range of BI tools as
+          well as SQL and Python. I also love my bicycle and my cat.
         </div>
       </div>
       <div class="mt-8 sm:mt-0">
         <!-- change this image -->
         <g-image
-          src="../../static/chart.svg"
+          src="../../static/avatar.jpg"
           alt="hero"
-          class="mx-auto sm:mx-0"
+          class="w-64 h-64 rounded-full mx-auto sm:mx-0"
         />
       </div>
     </div>
@@ -24,7 +32,7 @@
       <div
         class="projects container-inner mx-auto text-xl border-t border-gray-500 border-b py-16 mb-16 relative flex flex-wrap"
       >
-        <div class="md:w-1/2 pr-6">
+        <div class="md:w-1/2 px-3">
           <h2 class="font-bold my-8 text-2xl" id="projects">Tech Skills</h2>
 
           <ul class="text-lg sm:text-lg space-y-6">
@@ -32,92 +40,84 @@
               <div>TM1 / Planning Analytics</div>
               <div class="text-sm text-gray-600">
                 10+ years of experience building blazing fast solutions using
-                IBM Cognos TM1. Comfortable with all aspects of model design and
-                overall architecture.
+                IBM Cognos TM1.
               </div>
             </li>
             <li class="checkmark">
               <div>Python</div>
               <div class="text-sm text-gray-600">
-                Good level of proficiency for automation, analysis and data
-                pipeline creation. I have also contributed to projects such as
-                TM1py and Apahe Airflow.
+                My go to tool for data wrangling and automation. I have also
+                contributed often to the TM1py project.
               </div>
             </li>
             <li class="checkmark">
               <div>SQL</div>
               <div class="text-sm text-gray-600">
-                Extremely comfortable writing SQL for ad hoc analysis and ETL
-                purposes and possess a good understanding of the basis of
-                relational database design.
+                Extremely comfortable writing SQL and have a good understanding
+                of relational database design.
+              </div>
+            </li>
+            <li class="checkmark">
+              <div>Other BI Tools</div>
+              <div class="text-sm text-gray-600">
+                Experienced building reports and dashboards with Cognos, Power
+                BI and Tableau.
               </div>
             </li>
           </ul>
         </div>
-        <div class="md:w-1/2 pr-6 text-2xl">
+        <div class="md:w-1/2 px-3 text-2xl">
           <h2 class="font-bold my-8" id="soft skills">Soft Skills</h2>
 
           <ul class="text-lg sm:text-lg space-y-6">
             <li class="checkmark">
               <div>Project Management</div>
               <div class="text-sm text-gray-600">
-                A track record of delivering projects on time and within budget
-                with an emphasis on stakeholder communication.
+                A record of delivering projects on time and within budget with
+                an emphasis on communication.
               </div>
             </li>
             <li class="checkmark">
-              <div>Agile/DevOPs</div>
+              <div>Agile</div>
               <div class="text-sm text-gray-600">
                 Comfortable working in Agile environments using small iterations
-                and CI/CD to deliver increased value and transparency to
-                stakeholders.
+                and CI/CD to increase productivity.
               </div>
             </li>
             <li class="checkmark">
               <div>Team Lead</div>
               <div class="text-sm text-gray-600">
-                Experience with leading small teams both colocated and remote.
+                Experience with leading teams of developers both colocated and
+                remote.
+              </div>
+            </li>
+            <li class="checkmark">
+              <div>Mentoring</div>
+              <div class="text-sm text-gray-600">
+                Have participated in mentoring schemes in the past and genuinely
+                enjoy supporting colleagues.
               </div>
             </li>
           </ul>
         </div>
       </div>
-      <!-- end projects -->
     </div>
 
     <div class="overflow-x-hidden border-gray-200 border-b">
       <div
         class="get-to-know-me container-inner mx-auto text-xl pb-16 relative"
-      >
-        <h2 class="font-bold mb-6" id="about">About me:</h2>
-
-        <div
-          class="flex flex-col sm:flex-row justify-between items-center mb-16"
-        >
-          <div>
-            <g-image
-              src="../../static/avatar.jpg"
-              alt="avatar"
-              class="w-32 h-32 rounded-full mb-8 lg:mb-0"
-            />
-          </div>
-          <div class="flex-1 text-lg sm:text-xl ml-6">
-            I'm an experienced Berlin based professional with a passion for
-            technology and using it deliver insights into data. I'm also into
-          </div>
-        </div>
-      </div>
-      <!-- end get-to-know me -->
+      ></div>
     </div>
 
     <div class="overflow-x-hidden">
       <div class="contact-me bg-background-secondary pt-16">
         <div class="container-inner mx-auto text-xl pb-4 relative">
-          <h2 class="font-bold mb-6" id="contact">Contact me:</h2>
+          <h2 class="font-bold mb-6 text-2xl" id="contact">Get in touch</h2>
 
-          <p class="mb-12">
-            Have a question or want to discuss an opportunity? Drop me a note
-            and I'll get back to you.
+          <p class="mb-12 text-lg">
+            Have a question or want to discuss an opportunity? I can be found on
+            the usual social networks or you can drop me a note using the form
+            below.
           </p>
 
           <div class="text-lg sm:text-lg mb-16">
