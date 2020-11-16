@@ -70,7 +70,7 @@ describe('Loading Pages', () => {
       cy.get('[data-cypress=prev').click()
       cy.url().should('include', '/blog/2')
       cy.get('[data-cypress=prev').click()
-      cy.url().should('include', '/blog/')
+      cy.url().should('include', '/blog')
     })
   })
 
