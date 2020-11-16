@@ -24,7 +24,7 @@
       <div
         class="projects container-inner mx-auto text-xl border-t border-gray-500 border-b py-16 mb-16 relative flex flex-wrap"
       >
-        <div class="md:w-1/2 pr-3">
+        <div class="md:w-1/2 pr-6">
           <h2 class="font-bold my-8 text-2xl" id="projects">Tech Skills</h2>
 
           <ul class="text-lg sm:text-lg space-y-6">
@@ -54,7 +54,7 @@
             </li>
           </ul>
         </div>
-        <div class="md:w-1/2 pl-3 text-2xl">
+        <div class="md:w-1/2 pr-6 text-2xl">
           <h2 class="font-bold my-8" id="soft skills">Soft Skills</h2>
 
           <ul class="text-lg sm:text-lg space-y-6">
