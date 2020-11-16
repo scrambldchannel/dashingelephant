@@ -6,7 +6,7 @@ describe('Loading Pages', () => {
 
   it('visits the blog page', () => {
     cy.visit('/blog')
-      .contains('Adventures with pre-commit')
+      .contains('Enhanced syntax highlighting options for Gridsome')
   })
 
   it('can click the blog', () => {
@@ -15,23 +15,23 @@ describe('Loading Pages', () => {
     cy.get('[data-cypress=blog]').click()
 
     cy.url().should('include', '/blog')
-    cy.contains('Adventures with pre-commit')
+    cy.contains('Enhanced syntax highlighting options for Gridsome')
   })
 
   it('can visit a single blog post', () => {
-    cy.visit('/adventures-with-pre-commit')
+    cy.visit('/enhanced-syntax-highlighting-gridsome')
 
-    cy.url().should('include', '/adventures-with-pre-commit')
-    cy.contains('Adventures with pre-commit')
+    cy.url().should('include', '/enhanced-syntax-highlighting-gridsome')
+    cy.contains('Enhanced syntax highlighting options for Gridsome')
   })
 
   it('can click a single blog post', () => {
     cy.visit('/blog')
 
-    cy.contains('Adventures with pre-commit').click()
+    cy.contains('Enhanced syntax highlighting options for Gridsome').click()
 
-    cy.url().should('include', '/adventures-with-pre-commit')
-    cy.contains('Adventures with pre-commit')
+    cy.url().should('include', '/enhanced-syntax-highlighting-gridsome')
+    cy.contains('Enhanced syntax highlighting options for Gridsome')
   })
 
 
@@ -58,15 +58,19 @@ describe('Loading Pages', () => {
 
       cy.get('[data-cypress=next').click()
       cy.url().should('include', '/blog/2')
-      cy.contains('Trying to stay on the right track with git')
+      cy.get('[data-cypress=next').click()
+      cy.url().should('include', '/blog/3')
+      cy.get('[data-cypress=next').click()
+      cy.url().should('include', '/blog/4')
+
     })
 
     it('the prev button works', () => {
-      cy.visit('/blog/2')
-
+      cy.visit('/blog/3')
       cy.get('[data-cypress=prev').click()
-      cy.url().should('include', '/blog')
-      cy.contains('Adventures with pre-commit')
+      cy.url().should('include', '/blog/2')
+      cy.get('[data-cypress=prev').click()
+      cy.url().should('include', '/blog/')
     })
   })
 
