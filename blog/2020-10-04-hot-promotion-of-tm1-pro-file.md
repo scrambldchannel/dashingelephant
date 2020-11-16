@@ -22,7 +22,7 @@ The process is pretty straightforward, it takes a cube, or list of cubes, and a 
 
 These first couple of lines specify the version and the name of the process. How do I know this? Wim pointed me in the direction of the codes in the TM1 docs, notably the file at ```tm1_64/TM1JavaApiDocs/constant-values.html``` which contains a list of constants in the docs for the old Java API. It turns out that these correspond to the codes that start each line in the pro file. I've scraped the codes and saved them [here](/pages/ti-process-codes.html).
 
-As it goes on, you can see, each line is simply a code and either a numeric value or a string. I'm not sure why ```C:\TM1Data\Bedrock3\Data\Excel.RUX``` is there, it doesn't seem relevant in the context of what this process is doing. Looking at the codes, those are the settings for the ```datasourcename``` and ```datasourcenameforserver```. So I reckon they can actually go. 
+As it goes on, you can see, each line is simply a code and either a numeric value or a string. I'm not sure why ```C:\TM1Data\Bedrock3\Data\Excel.RUX``` is there, it doesn't seem relevant in the context of what this process is doing. Looking at the codes, those are the settings for the ```datasourcename``` and ```datasourcenameforserver```. So I reckon they can actually go.
 
 ```text
 562,"NULL"
@@ -30,7 +30,7 @@ As it goes on, you can see, each line is simply a code and either a numeric valu
 585,"C:\TM1Data\Bedrock3\Data\Excel.RUX"
 ```
 
-A lot of these values are blank and a cursory read of the manual suggests they are used to specify the various different options for a processes datasource. ```565``` is the password, which again shouldn't be relevant for this process (but presumably doesn't stop the process from being loaded at startup). 
+A lot of these values are blank and a cursory read of the manual suggests they are used to specify the various different options for a processes datasource. ```565``` is the password, which again shouldn't be relevant for this process (but presumably doesn't stop the process from being loaded at startup).
 
 ```text
 564,
@@ -69,7 +69,7 @@ pCube
 pDelim
 ```
 
-This is a bit more opaque but next come the parameter types. These define the type of the parameter, ```1``` indicates a number and ```2``` indicates a string. 
+This is a bit more opaque but next come the parameter types. These define the type of the parameter, ```1``` indicates a number and ```2``` indicates a string.
 
 ```text
 561,4
@@ -129,7 +129,7 @@ EndIf;
 
 ################################################################################################# ####################
 ##~~Join the bedrock TM1 community on GitHub https://github.com/cubewise-code/bedrock Ver 4.0~~##
-################################################################################################# 
+#################################################################################################
 
 ...
 ```
@@ -162,10 +162,10 @@ While the epilog is again mostly boilerplate.
 
 ### Wait, there's more
 
-There's still a bit at the end to cut through, but at least that's an overview of how it all works. Option ```576``` a bit more complicated but everything else seems pretty straightforward. Looking through the names of the codes, there are lots I think represent things that can't be created through the endpoint that allows a process to be created. For example, ```900``` to ```927``` all seem to pertain to settings for the SAP connector. 
+There's still a bit at the end to cut through, but at least that's an overview of how it all works. Option ```576``` a bit more complicated but everything else seems pretty straightforward. Looking through the names of the codes, there are lots I think represent things that can't be created through the endpoint that allows a process to be created. For example, ```900``` to ```927``` all seem to pertain to settings for the SAP connector.
 
 ```text
-576,CubeAction=1511DataAction=1503CubeLogChanges=0
+576,CubeAction=1511DataAction=1503CubeLogChanges=0
 930,0
 638,1
 804,0
@@ -260,7 +260,7 @@ with open(file, encoding='utf-8-sig') as f:
 
 ### Create an instance of the Process class
 
-From there, it's possible to create an instance of a TM1py ```Process``` object from the information grabbed for each process. I found it easier to use the built-in methods to create the parameters and variables. 
+From there, it's possible to create an instance of a TM1py ```Process``` object from the information grabbed for each process. I found it easier to use the built-in methods to create the parameters and variables.
 
 ```python
 import TM1py
@@ -313,12 +313,12 @@ for index, item in enumerate(process_dict['560']):
 
 for index, item in enumerate(process_dict['577']):
 
-    variable_type = "String" if process_dict['578'][index] == "2" else "Numeric"        
+    variable_type = "String" if process_dict['578'][index] == "2" else "Numeric"
 
     my_new_process.add_variable(
         name=item,
         variable_type=variable_type
-    )    
+    )
 ```
 
 ### Add to server
@@ -329,7 +329,7 @@ With a valid process object we should be able to create the process on the serve
 import pathlib
 import configparser
 
-# establish connection / how you 
+# establish connection / how you
 config = configparser.ConfigParser()
 config.read('config.ini')
 
@@ -344,25 +344,12 @@ with TM1py.Services.TM1Service(**config['tm1srv01']) as tm1:
     print(response.status_code)
 ```
 
-This works smoothly and the process can now be found on the server:
-
-<img style="padding-top: 10px; padding-bottom: 10px;" src="/images/process_now_appears_on_server.png">
-
-The parameters are intact and seem to have the right types and defaults:
-
-<img style="padding-top: 10px; padding-bottom: 10px;" src="/images/process_seems_intact.png">
+This works smoothly and the process can now be found on the server. The parameters are intact and seem to have the right types and defaults.
 
 ### Testing and known issues
 
-I did notice a couple of issues once I'd done a diff of the source file and the pro file created afterwards. A few differences were down to whitespace being stripped in the new version of the file. There were a couple of bugs though... 
-
-Multiline parameters containing commas get truncated:
-
-<img style="padding-top: 10px; padding-bottom: 10px;" src="/images/pro_diff_comma_issue.png">
-
-More seriously, in this code block, my pretty naive parsing hasn't handled nested quotes. A robust solution would probably require using regular expressions for parsing:
-
-<img style="padding-top: 10px; padding-bottom: 10px;" src="/images/pro_diff_quote_issue.png">
+I did notice a couple of issues once I'd done a diff of the source file and the pro file created afterwards. A few differences were down to whitespace being stripped in the new version of the file. There were a couple of bugs though... Multiline parameters containing commas get truncated. I wasn't expecting this and my parsing code was naive as a result.
+More seriously, in some code blocks, my pretty naive parsing hasn't handled nested quotes. A robust solution would probably require using regular expressions or similar.
 
 Note, the process ran successfully for a single cube but does fail when trying to use wildcards with the following showing up in the logs indicating the MDX isn't parsing (which makes sense):
 
@@ -370,6 +357,6 @@ Note, the process ran successfully for a single cube but does fail when trying t
 7292   [2]   ERROR   2020-10-04 16:05:58.936   TM1.Mdx.Interface   Syntax error at or near: ')}', character position 50
 ```
 
-So far, as a PoC, it shows that it can be done but needs some tweaking. Not every detail in the file is used to construct the new process so it's very likely that some legacy processes can't be created this way such as those created with the wizard or using the SAP connector. There are probably better solutions though, such as using TM1py to grab a process on a development server and push it to production. 
+So far, as a PoC, it shows that it can be done but needs some tweaking. Not every detail in the file is used to construct the new process so it's very likely that some legacy processes can't be created this way such as those created with the wizard or using the SAP connector. There are probably better solutions though, such as using TM1py to grab a process on a development server and push it to production.
 
 I was able to import all the latest Bedrock pro files and create them on the server but haven't actually tested them in depth. I also haven't tested it on with processes with ODBC data sources and think they might be problematic as I'm assuming there might be some more multiline options I haven't handled properly. So I wouldn't necessrily recommend it, but it's possible.
