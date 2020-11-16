@@ -228,7 +228,6 @@ Main components
   }
   .cd-timeline-content .cd-date {
     width: 50%;
-    left: 150%;
 
 }
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
@@ -245,7 +244,6 @@ Main components
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
     left: auto;
-    right: 150%;
   }
 }
 </style>
