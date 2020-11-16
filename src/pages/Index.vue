@@ -10,8 +10,8 @@
           Business Intelligence Specialist
         </div>
         <div class="flex-1 text-ms xs:text-sm mt-6">
-          I'm an experienced Berlin based consultant with a passion for
-          leveraging technology to deliver data driven insights. I have worked
+          I'm an experienced Berlin-based consultant with a passion for
+          leveraging technology to deliver data-driven insights. I have worked
           in a range of sectors and am comfortable in developer, analyst and
           leadership roles. I am proficient with a wide range of BI tools as
           well as SQL and Python. I also love my bicycle and my cat.
@@ -39,7 +39,7 @@
             <li class="checkmark">
               <div>TM1 / Planning Analytics</div>
               <div class="text-sm text-gray-600">
-                10+ years of experience building blazing fast solutions using
+                10+ years of experience building blazing fast solutions with
                 IBM Cognos TM1.
               </div>
             </li>
@@ -47,7 +47,7 @@
               <div>Python</div>
               <div class="text-sm text-gray-600">
                 My go to tool for data wrangling and automation. I have also
-                contributed often to the TM1py project.
+                often contributed to the TM1py project.
               </div>
             </li>
             <li class="checkmark">
@@ -61,7 +61,7 @@
               <div>Other BI Tools</div>
               <div class="text-sm text-gray-600">
                 Experienced building reports and dashboards with Cognos, Power
-                BI and Tableau.
+                BI, Tableau and more.
               </div>
             </li>
           </ul>
@@ -73,14 +73,14 @@
             <li class="checkmark">
               <div>Project Management</div>
               <div class="text-sm text-gray-600">
-                A record of delivering projects on time and within budget with
+                Posess a record of delivering projects on time and within budget with
                 an emphasis on communication.
               </div>
             </li>
             <li class="checkmark">
               <div>Agile</div>
               <div class="text-sm text-gray-600">
-                Comfortable working in Agile environments using small iterations
+                Comfortable working in Agile environments and using small iterations
                 and CI/CD to increase productivity.
               </div>
             </li>
@@ -94,7 +94,7 @@
             <li class="checkmark">
               <div>Mentoring</div>
               <div class="text-sm text-gray-600">
-                Have participated in mentoring schemes in the past and genuinely
+                Participated in mentoring schemes in the past and genuinely
                 enjoy supporting colleagues.
               </div>
             </li>
