@@ -13,7 +13,6 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.3",
     "@gridsome/vue-remark": "^0.2.5",
-    "axios": "^0.20.0",
     "chart.js": "^2.9.4",
     "gridsome": "^0.7.22",
     "gridsome-plugin-remark-prismjs-all": "github:scrambldchannel/gridsome-plugin-remark-prismjs-all",
