@@ -8,6 +8,7 @@
     "test": "./node_modules/.bin/cypress open"
   },
   "dependencies": {
+    "@gridsome/plugin-google-analytics": "^0.1.2",
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@gridsome/remark-prismjs": "^0.5.0",
     "@gridsome/source-filesystem": "^0.6.2",
@@ -16,7 +17,9 @@
     "chart.js": "^2.9.4",
     "gridsome": "^0.7.22",
     "gridsome-plugin-remark-prismjs-all": "github:scrambldchannel/gridsome-plugin-remark-prismjs-all",
+    "gridsome-plugin-robots-txt": "^1.0.2",
     "gridsome-plugin-rss": "^1.2.0",
+    "gridsome-plugin-seo": "^1.0.1",
     "vue-chartjs": "^3.5.1",
     "vue-fuse": "^2.2.1",
     "vue-scrollto": "^2.20.0"

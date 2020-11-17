@@ -13,6 +13,12 @@ module.exports = {
       use: 'gridsome-plugin-tailwindcss',
     },
     {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'G-GK1559EZDV'
+      }
+    },
+    {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'blog/**/*.md',
@@ -71,7 +77,8 @@ module.exports = {
           }
         }
       }
-    }
+    },
+
 
   ],
   templates: {
