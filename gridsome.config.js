@@ -15,7 +15,10 @@ module.exports = {
     {
       use: '@gridsome/plugin-google-analytics',
       options: {
-        id: 'G-GK1559EZDV'
+        config: {
+          id: 'G-GK1559EZDV'
+        }
+
       }
     },
     {
