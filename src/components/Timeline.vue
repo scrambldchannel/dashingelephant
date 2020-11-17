@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="get-to-know-me container-inner mx-auto text-xl pb-16 relative">
     <div class="font-bold mb-16 text-2xl">Career Overview</div>
 
     <section id="cd-timeline" class="cd-container">
@@ -97,7 +97,6 @@ export default {
 </script>
 
 <style>
-
 /* --------------------------------
 
 Main components
@@ -228,8 +227,7 @@ Main components
   }
   .cd-timeline-content .cd-date {
     width: 50%;
-
-}
+  }
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;
   }
@@ -239,7 +237,7 @@ Main components
     border-color: transparent;
     border-right-color: #333C42;
   }
-  .cd-timeline-block:nth-child(even) .cd-timeline-content  {
+  .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {

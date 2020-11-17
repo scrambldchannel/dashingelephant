@@ -5,9 +5,7 @@
 
     <Skills />
 
-    <div class="get-to-know-me container-inner mx-auto text-xl pb-16 relative">
       <Timeline />
-    </div>
 
     <div class="overflow-x-hidden">
       <div class="contact-me bg-background-secondary pt-16">
