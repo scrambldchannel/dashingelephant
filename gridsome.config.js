@@ -22,6 +22,16 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/vue-remark',
+      options: {
+        baseDir: './projects',
+        pathPrefix: '/projects',
+        typeName: 'Project',
+        template: './src/templates/Project.vue',
+
+      }
+    },
+    {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'blog/**/*.md',
