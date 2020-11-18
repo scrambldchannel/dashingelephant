@@ -177,7 +177,7 @@ I thought it would be possible to switch off the rendering of inline blocks by a
               'gridsome-plugin-remark-prismjs-all', {
                 showLineNumbers: false, //  don't enable for every code block, use on a case by case basis
                 noInlineHighlight: true,
-      
+
               },
             ],
           ],

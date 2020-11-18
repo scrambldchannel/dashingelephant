@@ -263,9 +263,9 @@ streak = 0
 first_day = None
 
 for index, row in df2[df2['type'] == "Ride"].iterrows():
-    
+
     day = row['date']
-    
+
     if not first_day or day - last_day > datetime.timedelta(days=1):
         first_day = day
         last_day = day
@@ -273,7 +273,7 @@ for index, row in df2[df2['type'] == "Ride"].iterrows():
     else:
         last_day = day
         streak = streak + 1
-    
+
     if streak > longest:
         longest = streak
 ```

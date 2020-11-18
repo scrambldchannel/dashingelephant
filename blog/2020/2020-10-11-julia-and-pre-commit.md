@@ -10,15 +10,15 @@ I've been working on Julia for a week now and wanted to try add some pre-commit 
 
 Pre-commit hooks are great for code formatting so I had that goal in mind as well as applying some basic linting. I also wanted to look at having the option to run a suite of tests. Generally, I avoid running tests automatically on each commit as it just takes too long. That said, curiousity meant that I wanted to build it, as a proof of concept if nothing else.
 
-### Where to get started?   
+### Where to get started?
 
 I was able to get some inspiration from the collection of scripts within the [Julia Actions](https://github.com/julia-actions) organisation on Github. It contains workflows for both testing and formatting. I'd already set these up as Github actions on my workflow but I wanted to try run something similar locally, rather than within Github.
 
-The actions are defined as yaml and in both of these cases simply call a shell one-liner that uses the Julia interpreter to run the built in test runner and the JuliaFormatter package. I was able to grab that as a starting point for my hooks, thanks open source. That said, I didn't find any obvious linting tools to leverage. I tried one package but it didn't work out of the box so I moved on for now. 
+The actions are defined as yaml and in both of these cases simply call a shell one-liner that uses the Julia interpreter to run the built in test runner and the JuliaFormatter package. I was able to grab that as a starting point for my hooks, thanks open source. That said, I didn't find any obvious linting tools to leverage. I tried one package but it didn't work out of the box so I moved on for now.
 
 ### Creating a repository to define the hooks
 
-Initially, I created some hooks that just ran a shell script saved in my project's repository but rather than including a copy of the script in all my Julia projects, I wanted to save my hooks to a separate repository to make it easier to share them around. Mainly though, I just wanted to understand how to implement this because it seemed cool. 
+Initially, I created some hooks that just ran a shell script saved in my project's repository but rather than including a copy of the script in all my Julia projects, I wanted to save my hooks to a separate repository to make it easier to share them around. Mainly though, I just wanted to understand how to implement this because it seemed cool.
 
 I created a [new repository](https://github.com/scrambldchannel/pre-commit-julia) and got started. In order for pre-commit to be able to run my hooks, the repository needs to contain a yaml file containing some metadata and any external code it needs to run. Here are the files I created:
 
@@ -45,7 +45,7 @@ This defines two hooks that will be run when any Julia files are changed. The ``
 
 #### Formatting code
 
-This is the script for formatting Julia code that will be fired by the ```format_julia``` hook. It first checks whether Julia is available in your path and, if so, askes Julia to execute a simple one liner that uses the formatter package to clean up any code. It will be executed once for every matching file that has been staged.
+This is the script for formatting Julia code that will be fired by the ```format_julia``` hook. It first checks whether Julia is available in your path and, if so, asks Julia to execute a simple one liner that uses the formatter package to clean up any code. It will be executed once for every matching file that has been staged.
 
 ```bash{codeTitle: "pre_commit_hooks/format.sh"}
 #!/bin/bash
@@ -101,7 +101,7 @@ julia --color=yes --check-bounds="$checkbounds" --inline="$inline" --project -e 
 
 ### Adding the hooks to a Julia project
 
-Assuming you have pre-commit installed in the project, you can add the hooks by adding something like this to your project repository. Note that I am specifying that I only want the tests to be run on a _push_. This is because they potentially take a long time so I don't want to run on every commit but I do want to run before pushing into Github because I'd rather a test fail locally than on Github's test runners. 
+Assuming you have pre-commit installed in the project, you can add the hooks by adding something like this to your project repository. Note that I am specifying that I only want the tests to be run on a _push_. This is because they potentially take a long time so I don't want to run on every commit but I do want to run before pushing into Github because I'd rather a test fail locally than on Github's test runners.
 
 
 ```yaml{codeTitle: ".pre-commit-config.yaml"}
@@ -117,4 +117,4 @@ Assuming you have pre-commit installed in the project, you can add the hooks by 
 
 ### Conclusions
 
-Well I got something working but I'm not sure how useful it is in practice due to how long the scripts take on even my relatively modest module. This is largely due to startup time of Julia's interpreter which is relatively slow compared to Python's. This is a deliberate trade off for Julia though, that startup time is relatively slow but that's what you're paying for the theoretical improvement in runtime speed. Anyway, it was a good learning experience. 
+Well I got something working but I'm not sure how useful it is in practice due to how long the scripts take on even my relatively modest module. This is largely due to startup time of Julia's interpreter which is relatively slow compared to Python's. This is a deliberate trade off for Julia though, that startup time is relatively slow but that's what you're paying for the theoretical improvement in runtime speed. Anyway, it was a good learning experience.

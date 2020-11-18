@@ -8,7 +8,7 @@ tags: ['git', 'github', 'bash']
 
 I've been enjoying a bit of down time recently which, as well as exploring the lakes of Berlin and Brandenburg, gave me a chance to check out the excellent talks during the [Airflow Summit 2020](https://airflowsummit.org/). They are all still available and I'd recommend them for those interested in learning more about what [Airflow](https://airflow.apache.org/) can do. I've worked with it before but haven't tried to use it with TM1, even though I've felt it might have been useful in some cases. So I decided to create a simple PoC to see how feasible it would be.
 
-### But why? 
+### But why?
 
 I've worked on many projects where TM1 was used to create a dataset (eg a forecast) but that ultimately, the data needed to get somewhere else. This can be particularly prevalent in organisations where tools like Tableau are (with good reason) thought to be better options for creating visualisations but also arise from a desire to be able to view forecast numbers somewhere else, such as the ERP systems. Developers not familiar with TM1 may expect they can easily connect via ODBC or similar only to realise it's not that simple.
 
@@ -20,7 +20,7 @@ In their words, "Airflow is a platform created by the community to programmatica
 
 The jobs themselves are written in code which means they can be version controlled and tested. The [Airflow docs](https://gtoonstra.github.io/etl-with-airflow/principles.html) lists the principles they try to follow. One thing it doesn't do out of the box is to connect to TM1 but it's easy to extend it with Python which then allows to leverage the power of TM1py.
 
-### Did it work? 
+### Did it work?
 
 Yes! At least in the basic use cases I identified:
 
@@ -34,7 +34,7 @@ Extracting the data from a cube and writing it somewhere was of the most interes
 
 *Note* This depends on having the following:
 
-* a working Airflow environment with support for S3 and airflow_tm1. Read more in [the docs](https://airflow.apache.org/docs/stable/start.html) if you want to get started. 
+* a working Airflow environment with support for S3 and airflow_tm1. Read more in [the docs](https://airflow.apache.org/docs/stable/start.html) if you want to get started.
 * connections createdfor TM1 and S3. Read more about managing [Airflow connections](https://airflow.apache.org/docs/stable/howto/connection/index.html) for details.
 * The [TM1Hook](https://github.com/scrambldchannel/airflow-tm1/blob/master/airflow_tm1/hooks/tm1.py) requires at least the following to be specified:
     * Host
@@ -70,7 +70,7 @@ from airflow_tm1.hooks.tm1 import TM1Hook
 
 ##### Set defaults
 
-These can be overwritten on a task by task basis. 
+These can be overwritten on a task by task basis.
 
 ```python
 # set defaults that DAG will pass to each task
@@ -139,11 +139,11 @@ airflow trigger_dag example_tm1_to_s3
 
 ##### Results
 
-I tested on small views, running both TM1 and Airflow locally with an OK internet connection. I was able to transfer small datasets (<10mb) relatively quickly but I've not done any serious testing and, obviously, scalability would be a concern. For pulling large volumes of data, a good understanding of TM1, and the model itself, would be required to develop a sensible strategy. That said, it should work for in some cases such as where summary data is required for a Tableau dashboard. Additionally, I'd expect exporting cube data via TI first would prove faster in many cases. 
+I tested on small views, running both TM1 and Airflow locally with an OK internet connection. I was able to transfer small datasets (<10mb) relatively quickly but I've not done any serious testing and, obviously, scalability would be a concern. For pulling large volumes of data, a good understanding of TM1, and the model itself, would be required to develop a sensible strategy. That said, it should work for in some cases such as where summary data is required for a Tableau dashboard. Additionally, I'd expect exporting cube data via TI first would prove faster in many cases.
 
 #### Custom Operators
 
-The DAG above uses the ```PythonOperator``` to call a custom function. For tasks that are likely to be used repeatedly, it's possible to create custom operators than can provide a useful abstraction to tasks. There's no reason one couldn't create a custom operator that would replicate the function I used above, but I thought I'd start with something simpler. I created custom operators to trigger TI processes and Chores. 
+The DAG above uses the ```PythonOperator``` to call a custom function. For tasks that are likely to be used repeatedly, it's possible to create custom operators than can provide a useful abstraction to tasks. There's no reason one couldn't create a custom operator that would replicate the function I used above, but I thought I'd start with something simpler. I created custom operators to trigger TI processes and Chores.
 
 ##### A DAG using a Custom Operator
 

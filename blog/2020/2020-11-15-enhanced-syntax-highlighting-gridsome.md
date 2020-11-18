@@ -24,7 +24,7 @@ Obviously, a code block needs to know which language grammar to apply to the cod
     """
     output3 = ["Fizz", "", ""]
     output5 = ["Buzz", "", "", "", ""]
-    
+
     for x in range(1, 101):
         print "%s%s" % (output3[x % 3], output5[x % 5]) or x
     print my_date.strftime('%d %A %a')
@@ -81,7 +81,7 @@ Other options can be added to the same block.
     ```js{codeTitle: "main.js"}{numberLines: true}
     // This is the main.js file. Import global CSS and scripts here.
     // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-    
+
     import DefaultLayout from '~/layouts/Default.vue'
     import VueScrollTo from 'vue-scrollto'
     import VueFuse from 'vue-fuse'
@@ -138,7 +138,7 @@ Here we can highlight lines by specifying individual lines and ranges which is u
     //
     //  You should have received a copy of the GNU General Public License
     //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    
+
     #include "badguy/badguy.hpp"
     ```
 

@@ -75,10 +75,10 @@ Tests essentially run a bit of code and then make sure the result is within the 
 
 ```python{codeTitle: "test_poc.py"}
 def test_cube_exists(tm1_dev):
-    assert tm1_dev.cubes.exists("}ClientGroups")    
+    assert tm1_dev.cubes.exists("}ClientGroups")
 
 def test_dimension_exists(tm1_dev):
-    assert tm1_dev.dimensions.exists("}Clients")    
+    assert tm1_dev.dimensions.exists("}Clients")
 
 def test_value(tm1_dev):
     cube_name = "}ClientGroups"
@@ -92,9 +92,8 @@ The tests can now be run from the command line with:
 $ pytest ./test_poc.py
 ```
 
-If everything goes well (and these tests should pass), you'll receive a summary that looks something like this: 
+If everything goes well (and these tests should pass), you'll receive a summary that looks something like this:
 
 ```
 I need to insert the pytest output here
 ```
-

@@ -53,7 +53,7 @@ conda create -n testenv python=3.7 anaconda
 
 #### Activate
 
-Once you've created an environment, activate it and install packages of interest. 
+Once you've created an environment, activate it and install packages of interest.
 
 ```bash{promptUser: "alex"}{promptHost: "thinky"}
 conda activate testenv
@@ -61,7 +61,7 @@ conda activate testenv
 
 ### Installing libraries
 
-Libraries can be installed with either conda or pip. As a basic rule, I search for them on conda first and install if available and install them via pip if not. 
+Libraries can be installed with either conda or pip. As a basic rule, I search for them on conda first and install if available and install them via pip if not.
 
 #### Is it in the conda repos?
 
@@ -72,9 +72,9 @@ conda search plotly
 ```
 ```
 Loading channels: ...working... done
-# Name                       Version           Build  Channel             
-plotly                        2.0.15  py27h139127e_0  pkgs/main           
-plotly                        2.0.15  py35h43bf465_0  pkgs/main           
+# Name                       Version           Build  Channel
+plotly                        2.0.15  py27h139127e_0  pkgs/main
+plotly                        2.0.15  py35h43bf465_0  pkgs/main
 plotly                        2.0.15  py36hd032def_0  pkgs/main
 [...]
 ```
@@ -89,7 +89,7 @@ conda install plotly
 
 ##### It might not exist in the conda repo though
 
-If you get a response like this, it's not available in the conda distribution you have. 
+If you get a response like this, it's not available in the conda distribution you have.
 
 ```bash{promptUser: "alex"}{promptHost: "thinky(testenv)"}
 conda search geoplotlib
@@ -154,7 +154,7 @@ Install nb_conda_kernels
 conda install nb_conda_kernels
 ```
 
-### Launch a notebook server 
+### Launch a notebook server
 
 ```bash{promptUser: "alex"}{promptHost: "thinky(notebook)"}
 jupyter notebook
