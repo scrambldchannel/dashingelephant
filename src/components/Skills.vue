@@ -44,7 +44,7 @@
             <li class="checkmark">
               <div>Project Management</div>
               <div class="text-sm text-gray-600">
-                Posess a record of delivering projects on time and within budget with
+                Possess a record of delivering projects on time and within budget with
                 an emphasis on communication.
               </div>
             </li>
