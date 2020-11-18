@@ -1,6 +1,5 @@
 ---
 title: Using pytest to test TM1 models
-path: "/pytest-tm1"
 date: 2020-03-24
 summary: I wanted an excuse to explore TM1py in more depth and had been thinking for
   a while about the possibilities offered by using a test framework like pytest to

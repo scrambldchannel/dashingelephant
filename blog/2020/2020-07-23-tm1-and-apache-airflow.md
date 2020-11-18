@@ -1,6 +1,5 @@
 ---
 title: TM1 and Apache Airflow
-path: /airflow-tm1
 date: 2020-07-23
 summary: I've seen numerous solutions for handling data integration where data needs to be extracted form TM1. Most end up involving multiple tasks triggered and managed in different tools by different teams. None of the moving parts are particularly complicated but the end to end process can be difficult to debug and it never seems to result in a particularly reusable solution. The introduction of the REST API and development of [TM1py](https://github.com/cubewise-code/tm1py) have increased the options. I thought it might be interesting to see how Airflow might be used to manage pipelines need data from TM1.
 tags: ['git', 'github', 'bash']

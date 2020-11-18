@@ -1,6 +1,5 @@
 ---
 title: Creating a TI process from a .pro file using TM1py
-path: /hot-promotion-of-tm1-pro-file
 date: 2020-10-04
 summary: Ever wondered what's going on in your .pro files? I did so I tried to take one apart with Python and re-create it with TM1py...
 tags: ['python', 'ti', 'tm1', 'cognos']

@@ -1,6 +1,5 @@
 ---
 title: Adventures with pre-commit
-path: "/adventures-with-pre-commit"
 date: 2020-09-30
 summary: I started using the pre-commit framework a while back on my projects but
   only with a very basic setup on pretty simple codebases. Common uses are apply code

@@ -1,6 +1,5 @@
 ---
 title: Playing around with the Strava API
-path: "/strava-api"
 date: 2020-07-23
 summary: My earliest memory of analytics is my sister and I watching my father creating
   Lotus 123 spreadsheets to track and even visualise our weekly performances at athletics.

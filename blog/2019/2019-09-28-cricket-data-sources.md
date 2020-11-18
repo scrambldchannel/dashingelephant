@@ -1,6 +1,5 @@
 ---
 title: Cricket data sources and Python
-path: "/cricket-data-sources"
 date: 2019-09-28
 summary: Inspired by an enthralling Ashes series, I wanted to play around with cricket
   data available from various free and commercial sources out there.. Despite a bit

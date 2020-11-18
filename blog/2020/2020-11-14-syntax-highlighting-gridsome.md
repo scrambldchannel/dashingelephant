@@ -1,6 +1,5 @@
 ---
 title: Syntax highlighting of code blocks in Gridsome
-path: "/syntax-highlighting-gridsome"
 date: 2020-11-14
 summary: I've been building a couple of sites in Gridsome and ran into a few little
   issues getting syntax highlighting applied to code blocks. This is how I solved

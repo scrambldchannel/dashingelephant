@@ -1,6 +1,5 @@
 ---
 title: Moving on to Gridsome
-path: "/new-gridsome-website"
 date: 2020-11-13
 summary: I've been using Pelican, a static site generator written in Python, to generate
   my blog. I wanted to try something new an shiny and wanted to leverage some of the

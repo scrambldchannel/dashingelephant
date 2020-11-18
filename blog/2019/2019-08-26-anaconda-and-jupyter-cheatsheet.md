@@ -1,6 +1,5 @@
 ---
 title: Anaconda and Jupyter Cheatsheet
-path: /jupyter-cheatsheet
 date: 2019-08-26
 summary: A bit annoyed at finding myself having to re-learn a good workflow for setting up dev environments for Jupyter projects, I thought I'd try to list my workflow as is and update as I improve so I can refer back after a hiatus.
 tags: ['anaconda', 'jupyter', 'python', 'linux']

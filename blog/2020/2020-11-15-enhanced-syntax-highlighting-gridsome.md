@@ -1,6 +1,5 @@
 ---
 title: Enhanced syntax highlighting options for Gridsome
-path: "/enhanced-syntax-highlighting-gridsome"
 date: 2020-11-15
 summary: Having managed to syntax highlighting to work in Gridsome I wanted to explore
   some of the extra features offered by gridsome-plugin-remark-prismjs-all.

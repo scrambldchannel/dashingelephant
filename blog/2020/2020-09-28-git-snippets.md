@@ -1,6 +1,5 @@
 ---
 title: Trying to stay on the right track with git
-path: /git-snippets
 date: 2020-09-28
 summary: For when my memories are murky, this is a list of common git commands I tend
   to use, aimed at a relative newbie. I actually used it to give an intro to git presentation
