@@ -16,7 +16,7 @@ module.exports = {
       use: 'gridsome-plugin-gtag',
       options: {
         config: {
-          id: process.env.GOOGLE_ANALYTICS_ID,
+          id: "G-GK1559EZDV",
         },
       },
     },
