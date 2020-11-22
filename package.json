@@ -8,10 +8,10 @@
     "test": "./node_modules/.bin/cypress open"
   },
   "dependencies": {
-    "gridsome": "^0.7.22",
-    "gridsome-plugin-gtag": "^0.1.10"
+    "gridsome": "^0.7.22"
   },
   "devDependencies": {
+    "@gridsome/plugin-google-analytics": "^0.1.2",
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.3",

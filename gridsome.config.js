@@ -13,12 +13,10 @@ module.exports = {
       use: 'gridsome-plugin-tailwindcss',
     },
     {
-      use: 'gridsome-plugin-gtag',
+      use: '@gridsome/plugin-google-analytics',
       options: {
-        config: {
-          id: "G-GK1559EZDV",
-        },
-      },
+        id: 'UA-183105325-1'
+      }
     },
     {
       use: '@gridsome/source-filesystem',
