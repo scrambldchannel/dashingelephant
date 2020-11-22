@@ -94,11 +94,11 @@
         </ul>
       </nav>
     </header>
-
-    <main class="flex-grow">
-      <slot />
-    </main>
-
+    <transition name="fade" appear>
+      <main class="flex-grow">
+        <slot />
+      </main>
+    </transition>
     <footer class="bg-teal-700 text-white">
       <div
         class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-8"

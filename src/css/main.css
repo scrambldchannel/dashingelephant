@@ -121,3 +121,11 @@ nav .active {
   height: 100%;
   border: 0;
 }
+
+.fade-enter-active {
+  transition: opacity 0.75s;
+}
+
+.fade-enter {
+  opacity: 0;
+}
