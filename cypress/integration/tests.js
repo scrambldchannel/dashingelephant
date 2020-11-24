@@ -19,9 +19,9 @@ describe('Loading Pages', () => {
   })
 
   it('can visit a single blog post', () => {
-    cy.visit('/blog/2020/2020-11-15-enhanced-syntax-highlighting-gridsome/')
+    cy.visit('/blog/2020-11-15-enhanced-syntax-highlighting-gridsome/')
 
-    cy.url().should('include', '/blog/2020/2020-11-15-enhanced-syntax-highlighting-gridsome/')
+    cy.url().should('include', '/blog/2020-11-15-enhanced-syntax-highlighting-gridsome/')
     cy.contains('Enhanced syntax highlighting options for Gridsome')
   })
 
@@ -84,7 +84,7 @@ describe('Loading Pages', () => {
     })
 
     it('can click on tags from blog post page', () => {
-      cy.visit('/blog/2020/2020-09-30-adventures-with-pre-commit')
+      cy.visit('/blog/2020-09-30-adventures-with-pre-commit')
 
       cy.contains('python').click()
       cy.url().should('include', '/tag/python')
