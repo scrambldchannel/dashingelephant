@@ -8,7 +8,8 @@
     "test": "./node_modules/.bin/cypress open"
   },
   "dependencies": {
-    "gridsome": "^0.7.22"
+    "gridsome": "^0.7.22",
+    "gridsome-plugin-remark-mermaid": "^1.0.1"
   },
   "devDependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.2",
