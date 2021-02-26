@@ -31,11 +31,11 @@ module.exports = {
         },
         remark: {
           plugins: [
+            'gridsome-plugin-remark-mermaid',
             ['gridsome-plugin-remark-prismjs-all', {
               showLineNumbers: false, //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
               noInlineHighlight: true,
             },
-
             ],
           ],
           externalLinksTarget: '_blank',
