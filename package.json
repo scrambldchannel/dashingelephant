@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "gridsome": "^0.7.22",
-    "gridsome-plugin-remark-mermaid": "^1.0.1"
+    "gridsome-plugin-remark-mermaid": "file:../gridsome-plugin-remark-mermaid"
   },
   "devDependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.2",

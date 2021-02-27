@@ -38,7 +38,7 @@ module.exports = {
               mermaidOptions: {
                 'themeVariables': {
                   "primaryColor": "#e2e8f0",
-                  "textColor": "#2C7A7B",
+                  "primaryTextColor": "#2C7A7B",
                   "lineColor": "#2d3748"
                 }
               }
