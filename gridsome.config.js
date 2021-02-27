@@ -31,7 +31,18 @@ module.exports = {
         },
         remark: {
           plugins: [
-            'gridsome-plugin-remark-mermaid',
+            ['gridsome-plugin-remark-mermaid', {
+              // the default theme gets applied after any themeVariables and can override things
+              // explicitly using the base theme seems to be less prone to doing this
+              theme: 'base',
+              mermaidOptions: {
+                'themeVariables': {
+                  "primaryColor": "#e2e8f0",
+                  "textColor": "#2C7A7B",
+                  "lineColor": "#2d3748"
+                }
+              }
+            }],
             ['gridsome-plugin-remark-prismjs-all', {
               showLineNumbers: false, //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
               noInlineHighlight: true,
