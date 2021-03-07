@@ -23,7 +23,7 @@ erDiagram
           FAIRYTALES }o..o{ LIBRARIES : "are found in"
 ```
 
-...can be rendered with a couple of lines of code.
+...can be rendered with just a few lines of code.
 
 ```
 erDiagram
@@ -44,3 +44,7 @@ graph LR
 ```
 
 I've never really gotten on with tools like Visio. I fell at the first learning curve hurdle and it didn't help that I was usually asked to do something with it as afterthought at the tail end of a project. There are scores of lighter options, desktop and browser based, but nothing compares to being able to create these diagrams right from your editor of choice.
+
+I've been using them a lot recently to get my head around a new BI setup at work that relies on a lot of nested SQL views. With very little effort, I've been able to document the different layers the data goes through as I've been working through the code without having to leave my editor. Another advantage is how easily they can be embedded in markdown documentation right there in the repository we are working on.
+
+Apparently gitlab automatically renders charts embedded in markdown files but github doesn't. That said, there's a cross browser plugin that will that for you. Plus there's a plugin for Gridsome that renders them at build time should I want to include them in a blog post. This is much easier than trying to mess around with diagrams in binary formats.
