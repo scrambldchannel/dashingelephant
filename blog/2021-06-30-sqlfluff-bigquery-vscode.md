@@ -16,7 +16,7 @@ Our reporting stack is built atop a somewhat tangled web of over 17k lines of Bi
 
 SQLFluff is written in Python so can be installed with pip:
 
-```bash
+```bash{promptHost: "deathstar"}
 pip install sqlfluff
 ```
 
