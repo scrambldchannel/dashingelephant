@@ -20,14 +20,6 @@ describe('Loading Pages', () => {
     cy.contains('Enhanced syntax highlighting options for Gridsome')
   })
 
-  it('can click a single blog post', () => {
-    cy.visit('/blog')
-
-    cy.contains('Enhanced syntax highlighting options for Gridsome').click()
-
-    cy.url().should('include', '2020-11-15-enhanced-syntax-highlighting-gridsome')
-    cy.contains('Enhanced syntax highlighting options for Gridsome')
-  })
 
 
   describe('Page Scroll to Sections', () => {
