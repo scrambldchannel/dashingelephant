@@ -6,10 +6,9 @@
       <div class="cd-timeline-block">
         <div class="cd-timeline-img"></div>
         <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
-          <div>2003</div>
+          <div>2021 - present</div>
           <p class="text-sm text-gray-600">
-            Completed a BSc in Computing Science at the University of NSW,
-            Sydney. Got hooked on Linux and learned Python 1.x.
+            Building a cloud data platform for an exciting startup on GCP, using Big Query, Airflow and Python.
           </p>
         </div>
       </div>
@@ -18,44 +17,11 @@
         <div class="cd-timeline-img"></div>
 
         <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
-          <div>2004</div>
+          <div>2019 - 2020</div>
           <p class="text-sm text-gray-600">
-            Moved to Europe in search of fame and fortune! Expected to be back
-            within two years but I've my home in Europe now.
-          </p>
-        </div>
-      </div>
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img"></div>
-
-        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
-          <div>2005 - 2006</div>
-          <p class="text-sm text-gray-600">
-            Systems Analyst at a large telco, built my first Busines Objects
-            report and automated everything I could with VBScript.
-          </p>
-        </div>
-      </div>
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img"></div>
-
-        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
-          <div>2007 - 2011</div>
-          <p class="text-sm text-gray-600">
-            Worked as an analyst / developer at RBS, a large bank in Edinburgh.
-            Spent my days with Cognos, Oracle and Business Objects.
-          </p>
-        </div>
-      </div>
-
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img"></div>
-
-        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
-          <div>2011 - 2013</div>
-          <p class="text-sm text-gray-600">
-            First steps as a freelance consultant, worked on several large scale
-            projects implementing TM1 as a planning solution.
+            Came to Berlin to be with my partner and went back to freelancing.
+            Have consulted on two finance transformations as a TM1 / Planning Analytics
+            specialist.
           </p>
         </div>
       </div>
@@ -75,11 +41,10 @@
         <div class="cd-timeline-img"></div>
 
         <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
-          <div>2019 - 2020</div>
+          <div>2011 - 2013</div>
           <p class="text-sm text-gray-600">
-            Came to Berlin to be with my partner and went back to freelancing.
-            Have consulted on two finance transformations as a TM1 / Planning Analytics
-            specialist.
+            First steps as a freelance consultant, worked on several large scale
+            projects implementing TM1 as a planning solution.
           </p>
         </div>
       </div>
@@ -88,12 +53,47 @@
         <div class="cd-timeline-img"></div>
 
         <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
-          <div>2021 - present</div>
+          <div>2007 - 2011</div>
           <p class="text-sm text-gray-600">
-            Building a cloud data platform for an exciting startup on GCP, using Big Query, Airflow and Python.
+            Worked as an analyst / developer at RBS, a large bank in Edinburgh.
+            Spent my days with Cognos, Oracle and Business Objects.
           </p>
         </div>
       </div>
+
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img"></div>
+
+        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
+          <div>2005 - 2006</div>
+          <p class="text-sm text-gray-600">
+            Systems Analyst at a large telco, built my first Busines Objects
+            report and automated everything I could with VBScript.
+          </p>
+        </div>
+      </div>
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img"></div>
+
+        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
+          <div>2004</div>
+          <p class="text-sm text-gray-600">
+            Moved to Europe in search of fame and fortune! Expected to be back
+            within two years but I've my home in Europe now.
+          </p>
+        </div>
+      </div>
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img"></div>
+        <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
+          <div>2003</div>
+          <p class="text-sm text-gray-600">
+            Completed a BSc in Computing Science at the University of NSW,
+            Sydney. Got hooked on Linux and learned Python 1.x.
+          </p>
+        </div>
+      </div>
+
     </section>
   </div>
 </template>
