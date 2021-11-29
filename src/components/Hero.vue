@@ -9,11 +9,7 @@
           Business Intelligence Specialist
         </div>
         <div class="flex-1 text-ms xs:text-sm mt-6">
-          I'm an experienced Berlin-based consultant with a passion for
-          leveraging technology to deliver data-driven insights. I have worked
-          in a range of sectors and am comfortable in developer, analyst and
-          leadership roles. I am proficient with a wide range of BI tools as
-          well as SQL and Python. I also love my bicycle and my cat.
+          I'm an experienced Berlin-based data professional with a genuine passion for using technology to unlock insights from data. I have worked across a range of sectors and am comfortable in developer, analyst and leadership roles. I can solve multiple problems with Python, sift through data with SQL and engineer scalable solutions that mean you can too.
         </div>
       </div>
       <div class="mt-8 sm:mt-0">
