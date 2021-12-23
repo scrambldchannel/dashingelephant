@@ -165,4 +165,6 @@ WHERE sales.as_at_date = '2021-09-30'
     AND sales.product_id = prod.id
 ```
 
+## Conclusion
+
 So that's an overview of pretty basic SQLFluff usage. There's a lot more that can be done, including setting a repository wide config file, linting jinja and dbt templates and integrating SQLFluff with your CI/CD pipeline via pre-commit hooks and Github actions. I'm working on this very topic currently and hope to get around to writing about my progress.
