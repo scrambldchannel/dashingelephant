@@ -1,12 +1,11 @@
 ---
 title: Removing the lint from BigQuery SQL with SQLFluff
-date: 2021-02-14
+date: 2021-12-14
 summary: Our reporting stack is built atop a somewhat tangled web of over 15k lines of BigQuery SQL. I wanted a linter that could help me clean up the code and also potentially be integrated with pre-commit and Github Actions. The search proved a little harder than anticipated, largely because few such tools support BigQuery's flavour of SQL but I came across SQLFluff and have been checking how feasible it would be to use on this project.
 tags:
 - sql
 - bigquery
 - formatter
-- devops
 ---
 
 Our reporting stack is built atop over 15k lines of BigQuery SQL that I have been trying to tame. Having made good use of Python formatters and linters like Black and Flake8, I wanted a linter that could help me clean up the code and also potentially be integrated with pre-commit and Github Actions.
@@ -39,8 +38,8 @@ A good example of this is trailing commas after the last column in a SELECT clau
 
 ```SQL
 SELECT as_at_date, division, sum(sales),
-from `my-project.reporting.sales` sales,
-        `my-project.reporting.products` prod
+from my-project.reporting.sales sales,
+        my-project.reporting.products prod
 where as_at_date = '2021-09-30'
 ```
 
@@ -128,10 +127,12 @@ WHERE as_at_date = '2021-09-30'
 However, one thing I don't really like is that it's removed my table aliases. Looking through the output, I think rule `L031` is to blame and I respectfully disagree with this change. The good news is that I can exclude any rules I don't really agree with, in either lint or fix mode, using the `--exclude-rules` flag.
 
 ```bash{promptHost: "deathstar"}
-sqlfluff fix --exclude-rules L031,L038 sales_report.sql --dialect bigquery
+sqlfluff fix --exclude-rules L031,L038,L057 sales_report.sql --dialect bigquery
 ```
 
-In the above invocation, I've excluded the rule about aliases and also the one about trailing commas. On the latter, I don't really have a strong opinion either way but, pragmatically, I know this is quite widely used in our codebase and getting bogged down by something so minor seems self defeating.
+In the above invocation, I've excluded the rule about aliases, the one about trailing commas and the special characters in table names. I don't really have a strong opinion either way on the trailing comma questions but it's pretty common in our codebase and doesn't strike me as a massive problem. Likewise, the special characters rule here seems to be triggered by my SQL enclosing the table names in in backticks. BigQuery does this when using it's auto formatter, so again, it's quite common in our code.
+
+The goal of a linter is to flag up a issues but you also need to use a bit of pragmatism. If your codebase uses patterns that SQLFluff doesn't agree with, I'd suggest not getting bogged down in them, especially when you're trying to sell the idea to colleagues. I will continue to tweak my config to find a nice balance, depending on the context.
 
 The result is somewhat more pleasing:
 
@@ -147,22 +148,21 @@ WHERE as_at_date = '2021-09-30'
 ```
 
 
-That said, the list of fixable violations are only a subset of the issues that made SQLFluff sad in lint mode. When you look into though, it's easy to see why. One of the things that SQLFluff is great for picking up, is ambiguity but I can't make those decisions for you.
+That said, the fixable violations are only a subset of the issues that made SQLFluff sad in lint mode. When you look into though, it's easy to see why. One of the things that SQLFluff is good at flagging is ambiguity but it can't make those decisions for you.
 
-For example, In my SQL, I'm joining two tables but I'm not specifying which table each column I use in my SELECT and WHERE clauses is actually from. This SQL may well be valid but, at a glance, it's difficult for a human, new to the codebase, to determine which table a column like `as_at_date` actually exists in. SQLFluff is giving me a (not so gentle) reminder to make life easier for others.
+For example, In my SQL, I'm joining two tables but I'm not specifying which table each column I use in my SELECT and WHERE clauses is actually from. This SQL may well be valid but, at a glance, it can be difficult for a human, especially one new to the codebase, to determine which table a column like `as_at_date` actually exists in. SQLFluff is giving me a (not so gentle) reminder to make life easier for others.
 
-```bash{promptHost: "deathstar"}
-sqlfluff fix --exclude-rules L031 bigquery/dataengine
+So for that reason, rules like that can be really useful but you're left to your own devices when it comes to fixing them. Changing the code to something like the following will make SQLFluff happy and make your code easier to read:
+
+```sql
+SELECT
+    sales.as_at_date,
+    sales.division,
+    sum(sales.sales) AS total_sales,
+FROM `my-project.reporting.sales` AS sales,
+    `my-project.reporting.products` AS prod
+WHERE sales.as_at_date = '2021-09-30'
+    AND sales.product_id = prod.id
 ```
 
-
-
-## Configuration
-
-.sqlfluff file (seems to need to be in the root of the repository), skipping rules
-
-## Integration with vscode
-
-## pre-commit
-
-## Github actions
+So that's an overview of pretty basic SQLFluff usage. There's a lot more that can be done, including setting a repository wide config file, linting jinja and dbt templates and integrating SQLFluff with your CI/CD pipeline via pre-commit hooks and Github actions. I'm working on this very topic currently and hope to get around to writing about my progress.
