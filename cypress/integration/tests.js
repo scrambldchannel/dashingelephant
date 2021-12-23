@@ -4,10 +4,6 @@ describe('Loading Pages', () => {
       .contains('Sutcliffe')
   })
 
-  it('visits the blog page', () => {
-    cy.visit('/blog')
-      .contains('Enhanced syntax highlighting options for Gridsome')
-  })
 
   it('can click the blog', () => {
     cy.visit('/')
@@ -15,7 +11,6 @@ describe('Loading Pages', () => {
     cy.get('[data-cypress=blog]').click()
 
     cy.url().should('include', '/blog')
-    cy.contains('Enhanced syntax highlighting options for Gridsome')
   })
 
   it('can visit a single blog post', () => {
@@ -25,14 +20,6 @@ describe('Loading Pages', () => {
     cy.contains('Enhanced syntax highlighting options for Gridsome')
   })
 
-  it('can click a single blog post', () => {
-    cy.visit('/blog')
-
-    cy.contains('Enhanced syntax highlighting options for Gridsome').click()
-
-    cy.url().should('include', '2020-11-15-enhanced-syntax-highlighting-gridsome')
-    cy.contains('Enhanced syntax highlighting options for Gridsome')
-  })
 
 
   describe('Page Scroll to Sections', () => {
