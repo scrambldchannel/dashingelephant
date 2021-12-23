@@ -1,7 +1,7 @@
 ---
 title: Removing the lint from BigQuery SQL with SQLFluff
 date: 2021-12-14
-summary: Our reporting stack is built atop a somewhat tangled web of over 15k lines of BigQuery SQL. I wanted a linter that could help me clean up the code and also potentially be integrated with pre-commit and Github Actions. The search proved a little harder than anticipated, largely because few such tools support BigQuery's flavour of SQL but I came across SQLFluff and have been checking how feasible it would be to use on this project.
+summary: Our reporting stack is built atop over 15k lines of BigQuery SQL that I have been trying to tame. Having made good use of Python formatters and linters like Black and Flake8, I wanted a linter that could help me clean up the code and also potentially be integrated with pre-commit and Github Actions.
 tags:
 - sql
 - bigquery
