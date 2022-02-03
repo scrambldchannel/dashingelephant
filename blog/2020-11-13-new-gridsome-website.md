@@ -1,18 +1,19 @@
 ---
 title: Moving on to Gridsome
 date: 2020-11-13
-summary: I've been using Pelican, a static site generator written in Python, to generate
+summary:
+  I've been using Pelican, a static site generator written in Python, to generate
   my blog. I wanted to try something new an shiny and wanted to leverage some of the
   tools in the Jamstack ecosystem. Given I've already played with Vue, Gridsome seemed
   like a good choice.
 tags:
-- netlify
-- gridsome
-- vue
-- jamstack
-- forestry
-
+  - netlify
+  - gridsome
+  - vue
+  - jamstack
+  - forestry
 ---
+
 I've been using Pelican, a static site generator written in Python, to generate my blog. I wanted to try something new and shiny and wanted to leverage some of the tools in the Jamstack ecosystem. Given I've already played with Vue, Gridsome seemed like a good choice.
 
 ### Motivation

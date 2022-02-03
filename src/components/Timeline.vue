@@ -8,7 +8,8 @@
         <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
           <div>2021 - present</div>
           <p class="text-sm text-gray-600">
-            Building a cloud data platform for an exciting startup on GCP, using Big Query, Airflow and Python.
+            Building a cloud data platform for an exciting startup on GCP, using
+            Big Query, Airflow and Python.
           </p>
         </div>
       </div>
@@ -20,8 +21,8 @@
           <div>2019 - 2020</div>
           <p class="text-sm text-gray-600">
             Came to Berlin to be with my partner and went back to freelancing.
-            Have consulted on two finance transformations as a TM1 / Planning Analytics
-            specialist.
+            Have consulted on two finance transformations as a TM1 / Planning
+            Analytics specialist.
           </p>
         </div>
       </div>
@@ -93,7 +94,6 @@
           </p>
         </div>
       </div>
-
     </section>
   </div>
 </template>
@@ -222,7 +222,7 @@ Main components
   height: 0;
   width: 0;
   border: 7px solid transparent;
-  border-right: 7px solid #333C42;
+  border-right: 7px solid #333c42;
 }
 
 @media only screen and (min-width: 1170px) {
@@ -234,7 +234,7 @@ Main components
     top: 24px;
     left: 100%;
     border-color: transparent;
-    border-left-color: #333C42;
+    border-left-color: #333c42;
   }
   .cd-timeline-content .cd-date {
     width: 50%;
@@ -246,7 +246,7 @@ Main components
     left: auto;
     right: 100%;
     border-color: transparent;
-    border-right-color: #333C42;
+    border-right-color: #333c42;
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;

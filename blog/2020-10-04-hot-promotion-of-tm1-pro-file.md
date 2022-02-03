@@ -2,9 +2,8 @@
 title: Creating a TI process from a .pro file using TM1py
 date: 2020-10-04
 summary: Ever wondered what's going on in your .pro files? I did so I tried to take one apart with Python and re-create it with TM1py...
-tags: ['python', 'ti', 'tm1', 'cognos']
+tags: ["python", "ti", "tm1", "cognos"]
 ---
-
 
 An [issue](https://github.com/cubewise-code/tm1py/issues/383) raised over at the TM1py project asked for a feature to add hot promotion of TM1 processes saved as pro files. The API allows creation of TI processes and TM1py provides some useful wrapper functions that can achieve this. However, the fiddly part was parsing a pro file to get the relevant information out to allow us to create an instance of the TM1py Process object.
 
@@ -19,9 +18,9 @@ The process is pretty straightforward, it takes a cube, or list of cubes, and a 
 602,"}bedrock.cube.rule.processfeeders"
 ```
 
-These first couple of lines specify the version and the name of the process. How do I know this? Wim pointed me in the direction of the codes in the TM1 docs, notably the file at ```tm1_64/TM1JavaApiDocs/constant-values.html``` which contains a list of constants in the docs for the old Java API. It turns out that these correspond to the codes that start each line in the pro file. I've scraped the codes and saved them [here](/pages/ti-process-codes.html).
+These first couple of lines specify the version and the name of the process. How do I know this? Wim pointed me in the direction of the codes in the TM1 docs, notably the file at `tm1_64/TM1JavaApiDocs/constant-values.html` which contains a list of constants in the docs for the old Java API. It turns out that these correspond to the codes that start each line in the pro file. I've scraped the codes and saved them [here](/pages/ti-process-codes.html).
 
-As it goes on, you can see, each line is simply a code and either a numeric value or a string. I'm not sure why ```C:\TM1Data\Bedrock3\Data\Excel.RUX``` is there, it doesn't seem relevant in the context of what this process is doing. Looking at the codes, those are the settings for the ```datasourcename``` and ```datasourcenameforserver```. So I reckon they can actually go.
+As it goes on, you can see, each line is simply a code and either a numeric value or a string. I'm not sure why `C:\TM1Data\Bedrock3\Data\Excel.RUX` is there, it doesn't seem relevant in the context of what this process is doing. Looking at the codes, those are the settings for the `datasourcename` and `datasourcenameforserver`. So I reckon they can actually go.
 
 ```text
 562,"NULL"
@@ -29,7 +28,7 @@ As it goes on, you can see, each line is simply a code and either a numeric valu
 585,"C:\TM1Data\Bedrock3\Data\Excel.RUX"
 ```
 
-A lot of these values are blank and a cursory read of the manual suggests they are used to specify the various different options for a processes datasource. ```565``` is the password, which again shouldn't be relevant for this process (but presumably doesn't stop the process from being loaded at startup).
+A lot of these values are blank and a cursory read of the manual suggests they are used to specify the various different options for a processes datasource. `565` is the password, which again shouldn't be relevant for this process (but presumably doesn't stop the process from being loaded at startup).
 
 ```text
 564,
@@ -58,7 +57,7 @@ A lot of these values are blank and a cursory read of the manual suggests they a
 
 ### Multiline codes
 
-This is a bit different though. For those familiar with TI processes, it's simple enough to work out what's going on. These are the names of the parameters of the process. The ```4``` after ```560``` indicates that there are four parameters specified.
+This is a bit different though. For those familiar with TI processes, it's simple enough to work out what's going on. These are the names of the parameters of the process. The `4` after `560` indicates that there are four parameters specified.
 
 ```text
 560,4
@@ -68,7 +67,7 @@ pCube
 pDelim
 ```
 
-This is a bit more opaque but next come the parameter types. These define the type of the parameter, ```1``` indicates a number and ```2``` indicates a string.
+This is a bit more opaque but next come the parameter types. These define the type of the parameter, `1` indicates a number and `2` indicates a string.
 
 ```text
 561,4
@@ -161,7 +160,7 @@ While the epilog is again mostly boilerplate.
 
 ### Wait, there's more
 
-There's still a bit at the end to cut through, but at least that's an overview of how it all works. Option ```576``` a bit more complicated but everything else seems pretty straightforward. Looking through the names of the codes, there are lots I think represent things that can't be created through the endpoint that allows a process to be created. For example, ```900``` to ```927``` all seem to pertain to settings for the SAP connector.
+There's still a bit at the end to cut through, but at least that's an overview of how it all works. Option `576` a bit more complicated but everything else seems pretty straightforward. Looking through the names of the codes, there are lots I think represent things that can't be created through the endpoint that allows a process to be created. For example, `900` to `927` all seem to pertain to settings for the SAP connector.
 
 ```text
 576,CubeAction=1511DataAction=1503CubeLogChanges=0
@@ -259,7 +258,7 @@ with open(file, encoding='utf-8-sig') as f:
 
 ### Create an instance of the Process class
 
-From there, it's possible to create an instance of a TM1py ```Process``` object from the information grabbed for each process. I found it easier to use the built-in methods to create the parameters and variables.
+From there, it's possible to create an instance of a TM1py `Process` object from the information grabbed for each process. I found it easier to use the built-in methods to create the parameters and variables.
 
 ```python
 import TM1py

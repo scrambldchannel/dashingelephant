@@ -3,12 +3,11 @@ title: Falling in love with a mermaid
 date: 2021-02-14
 summary: It's the 14th of February so rather buy any useless stuff I don't need for a fake holiday, I thought I'd play with a charting library.
 tags:
-- mermaid
-- gridsome
-- markdown
-- chart
-- visualisation
-
+  - mermaid
+  - gridsome
+  - markdown
+  - chart
+  - visualisation
 ---
 
 It's the 14th of February so rather buy any useless stuff I don't need for a fake holiday, I thought I'd play with a charting library. I have only recently discovered [Mermaid](https://mermaid-js.github.io/mermaid/#/), an awesome way to create charts using what they describe as "Markdown-inspired syntax".

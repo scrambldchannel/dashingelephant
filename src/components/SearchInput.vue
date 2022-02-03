@@ -80,7 +80,6 @@
   </div>
 </template>
 
-
 <static-query>
 query Search {
   allPost {
