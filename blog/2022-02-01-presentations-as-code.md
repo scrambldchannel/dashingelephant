@@ -43,7 +43,7 @@ marp: true
 ---
 ```
 
-The only other thing to understand, beyond a knowledge of Markdown, is that a new slide is indicated using a "ruler" `---`. So we could create a simple title slide and and a second page with an agenda with something like this:
+The only other thing to understand, beyond a knowledge of Markdown, is that a new slide is indicated using a "ruler" `---`. So we could create a simple title slide and and a few more pages with something like this:
 
 ```markdown
 # Presentations as Code with Marp!
@@ -60,6 +60,21 @@ by Alexander Sutcliffe
 + What cool features does it have?
 + Conclusion
 ---
+
+## What is Marp?
+
+The [Marp Presentation Ecosystem](https://marp.app/) (Marp for short) is a collection of tools that allow you to create elegant slide decks using the familiar Markdown syntax
+
+---
+
+## Why use it to create presentations?
+
+* Creating slides with wysiwg tools (e.g. Powerpoint) is a nightmare
+* Concentrate on content, not bells and whistles
+* Slidedecks can be committed to version control!
+
+---
+
 ```
 
 ### Syntax Highlighting
@@ -130,6 +145,10 @@ Using the directive inline allows you to specify that it should only take effect
 ```
 
 The snippet above could be used to add a page number to the current slide only, and not all proceeding slides (although I'm not sure why you would necessarily want to do that). Other directives available allow you to add headers and footers to slides and
+
+### Producing a PDF
+
+<embed src="/blog/pdfs/presentations_as_code.pdf" width="100%" height="600px" />
 
 ### Command line usage
 
