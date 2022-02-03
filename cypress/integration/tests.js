@@ -1,23 +1,24 @@
+// Some really basic tests here, ideally just enough to make sure the build isn't a complete car crash
+
+
 describe('Loading Pages', () => {
+
+  // my name should appear somewhere on this page
   it('visits the homepage', () => {
     cy.visit('/')
       .contains('Sutcliffe')
   })
 
-  it('visits the blog page', () => {
-    cy.visit('/blog')
-      .contains('Enhanced syntax highlighting options for Gridsome')
-  })
-
+  // if I click on the blog link, it should take me to /blog
   it('can click the blog', () => {
     cy.visit('/')
 
     cy.get('[data-cypress=blog]').click()
 
     cy.url().should('include', '/blog')
-    cy.contains('Enhanced syntax highlighting options for Gridsome')
   })
 
+  // simply tests that the path to an arbitrary post takes me to it
   it('can visit a single blog post', () => {
     cy.visit('/blog/2020-11-15-enhanced-syntax-highlighting-gridsome/')
 
@@ -25,16 +26,7 @@ describe('Loading Pages', () => {
     cy.contains('Enhanced syntax highlighting options for Gridsome')
   })
 
-  it('can click a single blog post', () => {
-    cy.visit('/blog')
-
-    cy.contains('Enhanced syntax highlighting options for Gridsome').click()
-
-    cy.url().should('include', '2020-11-15-enhanced-syntax-highlighting-gridsome')
-    cy.contains('Enhanced syntax highlighting options for Gridsome')
-  })
-
-
+  // test other nav buttons work to some basic extent
   describe('Page Scroll to Sections', () => {
 
     it('can scroll to About', () => {
@@ -52,6 +44,7 @@ describe('Loading Pages', () => {
     })
   })
 
+  // check the next button works
   describe('Pagination', () => {
     it('the next button works', () => {
       cy.visit('/blog')
@@ -65,6 +58,7 @@ describe('Loading Pages', () => {
 
     })
 
+    // ditto the prev button
     it('the prev button works', () => {
       cy.visit('/blog/3')
       cy.get('[data-cypress=prev').click()
@@ -75,24 +69,24 @@ describe('Loading Pages', () => {
   })
 
   describe('Tags for posts', () => {
+    // check the python tag
     it('can visit tags page', () => {
       cy.visit('/tag/python')
 
       cy.contains('Tag: python')
-      cy.contains('Adventures with pre-commit')
-      cy.contains('Creating a TI process from a .pro file using TM1py')
     })
 
+    // check it works from a post
     it('can click on tags from blog post page', () => {
       cy.visit('/blog/2020-09-30-adventures-with-pre-commit')
 
       cy.contains('python').click()
       cy.url().should('include', '/tag/python')
       cy.contains('Tag: python')
-      cy.contains('Adventures with pre-commit')
     })
   })
 
+  // check we can we switch b/w light and dark modes
   describe('Theme Switcher', () => {
     it('can change to dark theme', () => {
       cy.visit('/')
@@ -115,6 +109,7 @@ describe('Loading Pages', () => {
       cy.visit('/')
 
       cy.get('[data-cypress=search-results]').should('not.be.visible')
+      // Probably works, might depend on how many results I get for "Adventures"
       cy.get('[data-cypress=search]').type('Adventures')
       cy.get('[data-cypress=search-results]').should('be.visible')
       cy.contains('Adventures with pre-commit')
