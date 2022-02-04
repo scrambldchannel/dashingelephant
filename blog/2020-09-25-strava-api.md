@@ -1,19 +1,20 @@
 ---
 title: Playing around with the Strava API
 date: 2020-07-23
-summary: My earliest memory of analytics is my sister and I watching my father creating
+summary:
+  My earliest memory of analytics is my sister and I watching my father creating
   Lotus 123 spreadsheets to track and even visualise our weekly performances at athletics.
   Despite being a fairly average athlete, I remember being transfixed as the charts
   updated each week. Now we live in the Strava era and there were a couple of questions
   I had that I couldn't answer without using their API to get at my data.
 tags:
-- python
-- jupyter
-- api
-- strava
-- geo
-
+  - python
+  - jupyter
+  - api
+  - strava
+  - geo
 ---
+
 My earliest memory of analytics is watching my father creating Lotus 123 spreadsheets to track and even visualise our weekly performances at athletics. Despite being a fairly average athlete, I remember being transfixed as the charts updated each week. Now we live in the Strava era and there were a couple of questions I had that I couldn't answer without using their API to get at my data.
 
 Fitness apps are all the rage and technologies like GPS mean we can harvest a wealth of data compared to those manually entered and hand-timed results from my youth. I wish I still had those spreadsheets though, in fact, they may even be sitting on a 5 1/4 inch floppy somewhere at my parents' house...
