@@ -2,7 +2,7 @@
 title: TM1 and Apache Airflow
 date: 2020-07-23
 summary: I've seen numerous solutions for handling data integration where data needs to be extracted form TM1. Most end up involving multiple tasks triggered and managed in different tools by different teams. None of the moving parts are particularly complicated but the end to end process can be difficult to debug and it never seems to result in a particularly reusable solution. The introduction of the REST API and development of [TM1py](https://github.com/cubewise-code/tm1py) have increased the options. I thought it might be interesting to see how Airflow might be used to manage pipelines need data from TM1.
-tags: ['git', 'github', 'bash']
+tags: ["git", "github", "bash"]
 ---
 
 I've been enjoying a bit of down time recently which, as well as exploring the lakes of Berlin and Brandenburg, gave me a chance to check out the excellent talks during the [Airflow Summit 2020](https://airflowsummit.org/). They are all still available and I'd recommend them for those interested in learning more about what [Airflow](https://airflow.apache.org/) can do. I've worked with it before but haven't tried to use it with TM1, even though I've felt it might have been useful in some cases. So I decided to create a simple PoC to see how feasible it would be.
@@ -23,29 +23,29 @@ The jobs themselves are written in code which means they can be version controll
 
 Yes! At least in the basic use cases I identified:
 
-* Extract the data from a cube view and write this as a csv to an S3 bucket
-* Run a TI processes
-* Detect whether a value in a cell met a certain condition
+- Extract the data from a cube view and write this as a csv to an S3 bucket
+- Run a TI processes
+- Detect whether a value in a cell met a certain condition
 
 ### Putting it to the test
 
 Extracting the data from a cube and writing it somewhere was of the most interest to me initially. I chose S3 because of it's widespread use but the same concept could easily be applied to writing to any other system. I was able to create an Airflow DAG that did this pretty easily. To simplify the management of the connection to TM1, I created a library that extends Airflow's base functionality. I've released the resulting code as [airflow-tm1](https://github.com/scrambldchannel/airflow-tm1) on Github and published it to [PyPi](https://pypi.org/project/airflow-tm1/).
 
-*Note* This depends on having the following:
+_Note_ This depends on having the following:
 
-* a working Airflow environment with support for S3 and airflow_tm1. Read more in [the docs](https://airflow.apache.org/docs/stable/start.html) if you want to get started.
-* connections createdfor TM1 and S3. Read more about managing [Airflow connections](https://airflow.apache.org/docs/stable/howto/connection/index.html) for details.
-* The [TM1Hook](https://github.com/scrambldchannel/airflow-tm1/blob/master/airflow_tm1/hooks/tm1.py) requires at least the following to be specified:
-    * Host
-    * Login
-    * Port
-    * Extras
-        * ssl
+- a working Airflow environment with support for S3 and airflow_tm1. Read more in [the docs](https://airflow.apache.org/docs/stable/start.html) if you want to get started.
+- connections createdfor TM1 and S3. Read more about managing [Airflow connections](https://airflow.apache.org/docs/stable/howto/connection/index.html) for details.
+- The [TM1Hook](https://github.com/scrambldchannel/airflow-tm1/blob/master/airflow_tm1/hooks/tm1.py) requires at least the following to be specified:
+  - Host
+  - Login
+  - Port
+  - Extras
+    - ssl
 
-The trick here is that ```ssl``` needs to defined in the json string in the ```Extras``` field:
+The trick here is that `ssl` needs to defined in the json string in the `Extras` field:
 
 ```json
-{"ssl": false}
+{ "ssl": false }
 ```
 
 #### Creating a DAG
@@ -88,7 +88,6 @@ default_args = {
 
 This gets run by our task in the DAG and manages the end to end transfer of the data from TM1 to S3.
 
-
 ```python
 def cube_view_to_s3(cube, view, bucket, key, **kwargs):
 
@@ -110,7 +109,7 @@ def cube_view_to_s3(cube, view, bucket, key, **kwargs):
 
 ##### Create the DAG and a single task
 
-This DAG only has a single task ```t1``` but will usually contain several more and manage how they depend on one another.
+This DAG only has a single task `t1` but will usually contain several more and manage how they depend on one another.
 
 ```python
 with DAG(dag_id="example_tm1_to_s3", schedule_interval="@daily", default_args=default_args) as dag:
@@ -130,7 +129,7 @@ with DAG(dag_id="example_tm1_to_s3", schedule_interval="@daily", default_args=de
 
 ##### Running the DAG
 
-DAGS need to be saved in Airflow's DAG folder as ```*.py``` files. Airflow has a built in [web UI](https://airflow.apache.org/docs/stable/ui.html) that can manage DAGs. They can also be managed from a [cli](https://airflow.apache.org/docs/stable/usage-cli.html) which can be useful for testing purposes.
+DAGS need to be saved in Airflow's DAG folder as `*.py` files. Airflow has a built in [web UI](https://airflow.apache.org/docs/stable/ui.html) that can manage DAGs. They can also be managed from a [cli](https://airflow.apache.org/docs/stable/usage-cli.html) which can be useful for testing purposes.
 
 ```bash{promptUser: "alex"}{promptHost: "thinky"}
 airflow trigger_dag example_tm1_to_s3
@@ -142,7 +141,7 @@ I tested on small views, running both TM1 and Airflow locally with an OK interne
 
 #### Custom Operators
 
-The DAG above uses the ```PythonOperator``` to call a custom function. For tasks that are likely to be used repeatedly, it's possible to create custom operators than can provide a useful abstraction to tasks. There's no reason one couldn't create a custom operator that would replicate the function I used above, but I thought I'd start with something simpler. I created custom operators to trigger TI processes and Chores.
+The DAG above uses the `PythonOperator` to call a custom function. For tasks that are likely to be used repeatedly, it's possible to create custom operators than can provide a useful abstraction to tasks. There's no reason one couldn't create a custom operator that would replicate the function I used above, but I thought I'd start with something simpler. I created custom operators to trigger TI processes and Chores.
 
 ##### A DAG using a Custom Operator
 
@@ -179,7 +178,6 @@ with DAG(dag_id="example_run_ti", default_args=default_args, schedule_interval="
 #### Custom Sensors
 
 Sensors are used to control flow in a DAG. In this DAG, an instance of the [TM1CellValueSensor](https://github.com/scrambldchannel/airflow-tm1/blob/fef460219bca80203119dd794716ddef8e58fe20/airflow_tm1/sensors/tm1_cell_value.py#L10) checks that a value in a control cube indicates that there is at least a draft submission available for OPEX for the entire company. In this DAG, it just triggers a dummy task but could be used to trigger an export of the OPEX data for example.
-
 
 ##### A DAG using a Custom Sensor
 
@@ -222,8 +220,7 @@ with DAG(dag_id="example_value_sensor", default_args=default_args) as dag:
 
 ```
 
-The ```t1 >> t2``` specifies that task ```t1``` will run before ```t2```. That is, the second won't be triggered until the condition on the sensor task has returned a value of ```true```.
-
+The `t1 >> t2` specifies that task `t1` will run before `t2`. That is, the second won't be triggered until the condition on the sensor task has returned a value of `true`.
 
 ### Going further
 

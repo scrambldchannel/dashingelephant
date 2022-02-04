@@ -3,9 +3,9 @@ title: Removing the lint from BigQuery SQL with SQLFluff
 date: 2021-12-14
 summary: Our reporting stack is built atop over 15k lines of BigQuery SQL that I have been trying to tame. Having made good use of Python formatters and linters like Black and Flake8, I wanted a linter that could help me clean up the code and also potentially be integrated with pre-commit and Github Actions.
 tags:
-- sql
-- bigquery
-- formatter
+  - sql
+  - bigquery
+  - formatter
 ---
 
 Our reporting stack is built atop over 15k lines of BigQuery SQL that I have been trying to tame. Having made good use of Python formatters and linters like Black and Flake8, I wanted a linter that could help me clean up the code and also potentially be integrated with pre-commit and Github Actions.
@@ -146,7 +146,6 @@ FROM `my-project.reporting.sales` AS sales,
 WHERE as_at_date = '2021-09-30'
     AND sales.product_id = prod.id
 ```
-
 
 That said, the fixable violations are only a subset of the issues that made SQLFluff sad in lint mode. When you look into though, it's easy to see why. One of the things that SQLFluff is good at flagging is ambiguity but it can't make those decisions for you.
 

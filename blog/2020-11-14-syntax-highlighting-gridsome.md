@@ -1,23 +1,24 @@
 ---
 title: Syntax highlighting of code blocks in Gridsome
 date: 2020-11-14
-summary: I've been building a couple of sites in Gridsome and ran into a few little
+summary:
+  I've been building a couple of sites in Gridsome and ran into a few little
   issues getting syntax highlighting applied to code blocks. This is how I solved
   it.
 tags:
-- shiki
-- prismjs
-- gridsome
-- vue
-
+  - shiki
+  - prismjs
+  - gridsome
+  - vue
 ---
+
 I've been playing around with Gridsome for a little while now and have started migrating some content from my old Pelican powered blog. One thing that caused me a few headaches was getting embedded code blocks to be rendered elegantly with syntax highlighting support for a variety of languages.
 
 The first issue was choosing a plugin to handle it. Having checked the list of plugins and looked at a few themes and templates, it seemed like there were a few options:
 
-* [@gridsome/remark-prismjs](https://gridsome.org/plugins/@gridsome/remark-prismjs)
-* [gridsome-plugin-remark-shiki](https://gridsome.org/plugins/gridsome-plugin-remark-shiki)
-* [gridsome-plugin-remark-prismjs-all](https://gridsome.org/plugins/gridsome-plugin-remark-prismjs-all)
+- [@gridsome/remark-prismjs](https://gridsome.org/plugins/@gridsome/remark-prismjs)
+- [gridsome-plugin-remark-shiki](https://gridsome.org/plugins/gridsome-plugin-remark-shiki)
+- [gridsome-plugin-remark-prismjs-all](https://gridsome.org/plugins/gridsome-plugin-remark-prismjs-all)
 
 ### @gridsome/remark-prismjs
 
@@ -150,18 +151,19 @@ module.exports = {
 It also suggests adding some extra css to theme the titles, highlighting and line numbers. This isn't strictly necessary if you're using a theme bundled with the plugin but might be if you are using a standard prism theme. I'm using the night-owl theme and am pretty happy with the result out of the box. That said, I wanted to override the styling of the code block headings to fit in with my site's theme. I overwrote the css with the following:
 
 ```css
-  .gridsome-code-title {
-    position: relative;
-    margin-bottom: -0.8em;
-    background-color: #2C7A7B;
-    color: #f7fafc;
-    font-size: 0.875rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  }
+.gridsome-code-title {
+  position: relative;
+  margin-bottom: -0.8em;
+  background-color: #2c7a7b;
+  color: #f7fafc;
+  font-size: 0.875rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
 ```
 
 The other issue is with the styling of inline code blocks. Initially, I had a css clash for code blocks causing the background to be overwritten from my prism theme which I fixed easily enough but then I was left with lots of inline sentences with a black background on a white page. It didn't look great and I wanted my theme to take care of them rather than the plugin.

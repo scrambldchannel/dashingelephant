@@ -1,14 +1,15 @@
 ---
 title: Will Python replace Excel? The answer is, er, complicated
 date: 2020-09-27
-summary: I read another blogpost recently claiming that Python was going to spell
+summary:
+  I read another blogpost recently claiming that Python was going to spell
   the end of Excel's reign as one of, if not the most, used tool for analytics. Maybe
   it's largely true in some pockets but I think the real picture is a bit more complicated.
 tags:
-- excel
-- python
-
+  - excel
+  - python
 ---
+
 At a meetup I attended in Manchester earlier this year (shout out to the [North West Ruby User Group](https://www.meetup.com/North-West-Ruby-User-Group/)) I had an interesting conversation with a guy who was the founder of a startup. When I asked about his business model, he looked a little sheepish and explained that it was a SaaS offering that allowed clubs and schools to manage subscriptions and billing. Like many, when I hear "startup" I immediately think of companies that are going to disrupt the delivery of new contact lenses by autonomous drone _before_ you even know that you've run out by using ML models based on how many times you've eaten carrots or listened to Art Garfunkel. OK so I made that up but if you end up making money out of it, I will be asking for equity.
 
 There was no need for this guy to feel embarrassed about his business model. We talked for a while and it seemed, after a tough start, he and his partners were doing well. Given the current climate, I worry a little about their cash flow but then no one really foresaw this. I hope they're doing OK. Pandemics aside, one thing he said really stuck with me which, to paraphrase, was something like:
