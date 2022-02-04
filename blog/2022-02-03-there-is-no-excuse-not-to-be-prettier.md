@@ -1,5 +1,5 @@
 ---
-title: There's no excuse not to be Pretty (or bad spelling)
+title: There's no excuse not to be Prettier (or for bad spelling)
 date: 2022-02-03
 summary: There's no body shaming here but as a big proponent of code formatters and pre-commit hooks, I was a little shocked by the extent of the makeover Prettier gave my code (and I learned how to spell "curiosity")
 tags:
