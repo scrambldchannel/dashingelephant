@@ -1,5 +1,5 @@
 ---
-title: Presentations as code
+title: Presentations as code thnkas to Marp
 date: 2022-02-01
 summary: I spent years dodging Powerpoint, with limited success. Whether it was me that was expected to deliver the presentation, or people imploring me to automate the creation of their slide decks, I hated few things more in day to day. What really pissed me off was the suspicion that it really didn't need to be this hard...
 tags: ['marp', 'pdf', 'js', 'presentation', 'vscode']
@@ -32,10 +32,9 @@ There are no doubt ways of achieving something similar with other tools, but the
 
 ### Getting Started with Marp
 
-By installing the vscode extension, I was up and running in seconds. Of course I know that everyone uses different editors but the extension I'm using just builds on the Marp framework and there's no reason one can't use different tools within the ecosystem to produce slides in the same way. That said, having the preview pane in my editor is the perfect workflow for me. I can write my slides and see the preview update in real time.
+By installing the vscode extension, I was up and running in seconds. Of course I know that everyone uses different editors but the extension I'm using just builds on the Marp framework and there's no reason one can't use different tools within the ecosystem to produce slides in the same way. That said, having the preview pane in my editor is the perfect workflow for me. I can write my slides and see the result in real time.
 
 Creating a simple slide deck is easy. All you need to do is create a Markdown file and add a [front matter](https://jekyllrb.com/docs/front-matter/) section with the following:
-
 
 ```markdown
 ---
@@ -79,9 +78,9 @@ The [Marp Presentation Ecosystem](https://marp.app/) (Marp for short) is a colle
 
 ### Syntax Highlighting
 
-As I mentioned above, this is a key benefit for me. When giving technical presentations, it's quite common to want to be able to show some code, and while I will often drop to my editor to show things live, it's nice to be able to produce a slide deck with some code examples included. Adding syntax highlighting is a really nice feature and Marp gives you this for free.
+As I mentioned above, this is a key benefit for me. When giving technical presentations, it's quite common to want to be able to show some code, and while I will often drop to my editor to demo things live, it's nice to be able to produce a slide deck with some readable code examples included. Using Markdown to create your slides means you get this for free.
 
-This is all getting a bit meta and, given that I'm writing this blog post in Markdown, difficult to illustrate but Marp will render a code block prefixed with three backticks and a language just as you would expect. That is, the following Python code will look appear highlighted according to the theme you're using.
+This is all getting a bit meta but, given that I'm writing this blog post in Markdown, it's difficult to illustrate but Marp will render a code block prefixed with three backticks and a language just as you would expect. That is, the following Python code will look appear highlighted according to the theme you're using.
 
 ```python
 
@@ -122,7 +121,7 @@ strong {
 <!-- theme: gaia -->
 ```
 
-Another directive let's you add pagination to slides. Again this can either be specified in the front matter or inline:
+Another directive let's you add pagination to slides. Again this can either be specified in the front matter:
 
 ```markdown
 ---
@@ -132,41 +131,67 @@ pagination: true
 ---
 ```
 
-Alternatively, add the directive inline:
+Or, alternatively, you can add the directive inline:
 
 ```markdown
 <!-- paginate: true -->
 ```
 
-Using the directive inline allows you to specify that it should only take effect from the page it is added to onwards. You can further restrict the scope of a directive by prefixing it with an underscore:
+Using the directive inline allows you to specify that it should only take effect from the page it is added to onwards, or until it is overwritten by another inline directive
+
+You can further restrict the scope of a directive by prefixing it with an underscore:
 
 ```markdown
 <!-- _paginate: true -->
 ```
 
-The snippet above could be used to add a page number to the current slide only, and not all proceeding slides (although I'm not sure why you would necessarily want to do that). Other directives available allow you to add headers and footers to slides and
+The snippet above could be used to add a page number to the current slide only (although I'm not sure why you would necessarily want to do that). Other directives are available and provide other functionality that is relevant in the context of presentations such as adding headers as footers to slides.
 
-### Producing a PDF
+### Images
 
-<embed src="/blog/pdfs/presentations_as_code.pdf" width="100%" height="600px" />
+Of course at some point you're likely to want to add an image or two to your presentation. Marp [extends the Markdown syntax](https://marpit.marp.app/image-syntax) to make this a bit easier. I still found this a bit of pain (but then I find embedding images neatly into anything a bit fiddly). Basic usage would be something like this:
 
-### Command line usage
+```markdown
+![](image.png)
+```
 
-The vscode extension enables you to create a PDF of your presentation by clicking a button but I was keen to explore the ecosystem further rather than rely on a mouse click.
+Image can be scaled using width and height (or shorthand equivalents):
 
-### Github actions
+```markdown
+![width: 200px height: 150px](image.png)
+![w: 30cm h: 20cm](image.jpg)
+```
 
+You can also apply css filters with Marp. To be honest, not being a full time web developer, I didn't even know these things existed until today but I can see how some might be useful. For example, converting images to greyscale might be useful if colours aren't displaying properly for whatever reason:
 
-### Plugins
+```markdown
+![grayscale](image.gif)
+```
+
+You can also use the `bg` keyword to set an image as the background for a slide. You can also use as many keywords as you like in combination. For example, this would set the slide background image and also set the opacity to 20% and blur the image somewhat. Something like this could be really useful for creating a cover slide or adding logos or watermarks to slides.
+
+```markdown
+![bg opacity:0.2 bg blur:5px](image.png)
+```
+
+In the Marp docs there is mention of an advanced backgrounds (experimental at the time of writing) which offers support for using multiple images and splitting backgrounds. The standard functionality is all I see myself needing, at least at this stage.
+
+### Rendering a presentation
+
+If you are using the vscode extension, and just want to produce a pdf on an ad hoc basis, you can simply click a button and export a pdf. I produced the following presentation doing exactly that:
+
+<embed src="/blog/pdfs/presentations_as_code.pdf" title="presentations_as_code_pdf" width="100%" height="600px" allowfullscreen />
+
+Still, there's a lot more power and flexibility you can unlock if you use the [Marp CLI](https://github.com/marp-team/marp-cli) package. You can install from npm or simply (and my preferred method) execute directly from npm using npx:
+
+```bash{promptUser: "alex"}{promptHost: "deathstar"}
+npx @marp-team/marp-cli@latest presentations_as_code.md --pdf
+```
+
+You'll note that I've used a flag to specify that I want to render as a pdf. HTML is the default and the Marp CLI can also output presentations in Powerpoint format and more. The CLI offers further options for customising your output. It would trivial to wrap your desired options in a simple Makefile or even to use Marp as part of a CI pipeline. I note that someone has created a [Github action](https://github.com/marketplace/actions/marp-action) that can output a presentation to a Github pages which seems interesting...
 
 ### What's missing?
 
+As much as I find it hard to empathise with them, I'm sure there are Powerpoint and Prezi experts out there that would be horrified at the list of things they can't do. As much as super slick animated presentations can look really cool, they're not something I really aspire to being able to create. Partly because I'm lazy and devoid of artistic talent, but also because I feel these things are often a distraction or a massive waste of time.
 
-Adding a simple background image? I guess this can be done at the theme level or within the front matter?
-
-
-Creating my own theme? Is this as simple as simply extending the css?
-
-Directives for doing more complicated stuff - give some examples of this?
-
-Github actions to automate building of pdfs and saving these artifacts somewhere? How cool would it be to simply push a commit and have your slides rebuild devops style? Where would they actually get saved though? Does github let me store binary files like this somewhere?
+There is one thing I hoped would work out of the box that didn't and that is being able to embed Mermaid charts. This would make Marp perfect for my needs but the good news is that there are ways of making it work, with a little bit of effort. This [issue thread](https://github.com/marp-team/marp-core/issues/139) outlines some workarounds and also hints that this functionality could be added via plugin. That's right, Marp has a plugin architecture, one that I haven't really explored but that makes me excited at the possibilities!
