@@ -2,7 +2,7 @@
 title: Presentations as code thnkas to Marp
 date: 2022-02-01
 summary: I spent years dodging Powerpoint, with limited success. Whether it was me that was expected to deliver the presentation, or people imploring me to automate the creation of their slide decks, I hated few things more in day to day. What really pissed me off was the suspicion that it really didn't need to be this hard...
-tags: ['marp', 'pdf', 'js', 'presentation', 'vscode']
+tags: ["marp", "pdf", "js", "presentation", "vscode"]
 ---
 
 I have spent years dodging Powerpoint, with limited success. Whether it was me that was expected to deliver the presentation, or people imploring me to automate the creation of their slide decks, I hated few things more in day to day. What really pissed me off was the feeling that it really didn't need to be this hard. Why do I need to click click click, why can't I just write some code? I thought I'd try out some modern tools that aim to address exactly this problem.
@@ -21,14 +21,14 @@ Being able to add the build step to a CI tool would be the icing on the cake. If
 
 I did a little bit of digging and, thanks to the awesomeness of the open source community, there are dozens of different tools that I could use. A few that caught my eye after a cursory search were:
 
-* [Pandoc](https://pandoc.org/) - a versatile document coverter written in Haskell which supports multiple different markup and output formats
-* [reveal.js](https://revealjs.com/) - a fully fledged js framework for creating really slick HTML slides that supports Markdown and lots more
-* [landslide](https://github.com/adamzap/landslide) - a tool written in Python for turning Markdown (and rST etc) into HTML
-* [Marp](https://marp.app/) - a dedicated Markdown converter geared towards slide creation with an intuitive vscode extension
+- [Pandoc](https://pandoc.org/) - a versatile document coverter written in Haskell which supports multiple different markup and output formats
+- [reveal.js](https://revealjs.com/) - a fully fledged js framework for creating really slick HTML slides that supports Markdown and lots more
+- [landslide](https://github.com/adamzap/landslide) - a tool written in Python for turning Markdown (and rST etc) into HTML
+- [Marp](https://marp.app/) - a dedicated Markdown converter geared towards slide creation with an intuitive vscode extension
 
 Of the above, Pandoc looks extremely useful but I was leaning towards a tool more focused on creating presentations specifically. Meanwhile, reveal.js was geared to creating fancy presentations in HTML but just seemed like overkill for my use case. I did play around with Landslide, which has the appeal of being written in Python, and it worked just fine but when I tried Marp, via the [vscode plugin](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode), I was hooked.
 
-There are no doubt ways of achieving something similar with other tools, but the ability to type Markdown in an editor pane and have it renderred as slides in the preview pane, was exactly the experience I was looking for. Ideally, with this workflow, I would be able to knock out a simple slide deck in minutes and produce a PDF that I can  present just about anywhere.
+There are no doubt ways of achieving something similar with other tools, but the ability to type Markdown in an editor pane and have it renderred as slides in the preview pane, was exactly the experience I was looking for. Ideally, with this workflow, I would be able to knock out a simple slide deck in minutes and produce a PDF that I can present just about anywhere.
 
 ### Getting Started with Marp
 
@@ -48,16 +48,19 @@ The only other thing to understand, beyond a knowledge of Markdown, is that a ne
 # Presentations as Code with Marp!
 
 by Alexander Sutcliffe
-+ [Github](https://github.com/scrambldchannel)
-+ [Blog](https://dashingelephant.xyz/)
+
+- [Github](https://github.com/scrambldchannel)
+- [Blog](https://dashingelephant.xyz/)
 
 ---
 
 ## Agenda
-+ What is Marp?
-+ Why use it to create presentations?
-+ What cool features does it have?
-+ Conclusion
+
+- What is Marp?
+- Why use it to create presentations?
+- What cool features does it have?
+- Conclusion
+
 ---
 
 ## What is Marp?
@@ -68,12 +71,11 @@ The [Marp Presentation Ecosystem](https://marp.app/) (Marp for short) is a colle
 
 ## Why use it to create presentations?
 
-* Creating slides with wysiwg tools (e.g. Powerpoint) is a nightmare
-* Concentrate on content, not bells and whistles
-* Slidedecks can be committed to version control!
+- Creating slides with wysiwg tools (e.g. Powerpoint) is a nightmare
+- Concentrate on content, not bells and whistles
+- Slidedecks can be committed to version control!
 
 ---
-
 ```
 
 ### Syntax Highlighting
@@ -98,7 +100,6 @@ Marp comes with a [few themes built in](https://github.com/marp-team/marp-core/t
 ---
 marp: true
 theme: gaia
-
 ---
 ```
 
@@ -106,10 +107,10 @@ It's also possible to override the CSS of a theme using the `<style>` tag and en
 
 ```html
 <style scoped>
-strong {
-  font-size: 64px;
-  color: lightblue;
-}
+  strong {
+    font-size: 64px;
+    color: lightblue;
+  }
 </style>
 ```
 
@@ -127,7 +128,6 @@ Another directive let's you add pagination to slides. Again this can either be s
 ---
 marp: true
 pagination: true
-
 ---
 ```
 
