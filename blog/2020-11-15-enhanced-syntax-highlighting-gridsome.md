@@ -1,14 +1,15 @@
 ---
 title: Enhanced syntax highlighting options for Gridsome
 date: 2020-11-15
-summary: Having managed to syntax highlighting to work in Gridsome I wanted to explore
+summary:
+  Having managed to syntax highlighting to work in Gridsome I wanted to explore
   some of the extra features offered by gridsome-plugin-remark-prismjs-all.
 tags:
-- prismjs
-- gridsome
-- vue
-
+  - prismjs
+  - gridsome
+  - vue
 ---
+
 Having managed to get [syntax highlighting working in Gridsome](/syntax-highlighting-gridsome), I wanted to explore some of the extra features offered by [gridsome-plugin-remark-prismjs-all](https://gridsome.org/plugins/gridsome-plugin-remark-prismjs-all).
 
 The examples make it easy to enhance your code blocks with extra shiny stuff. Adding titles, line numbers and line highlighting to blocks is as simple as adding a bit of extra metadata.

@@ -1,17 +1,18 @@
 ---
 title: Using pytest to test TM1 models
 date: 2020-03-24
-summary: I wanted an excuse to explore TM1py in more depth and had been thinking for
+summary:
+  I wanted an excuse to explore TM1py in more depth and had been thinking for
   a while about the possibilities offered by using a test framework like pytest to
   run automate tests of a TM1 model. This is really a quick proof of concept to gauge
   how feasible it might prove.
 tags:
-- tm1
-- python
-- pytest
-- tm1py
-
+  - tm1
+  - python
+  - pytest
+  - tm1py
 ---
+
 I wanted an excuse to explore TM1py in more depth and had been thinking for a while about the possibilities offered by using a test framework like pytest to run automated tests of a TM1 model. This is really a quick proof of concept to gauge how feasible it might prove.
 
 ### Environment setup

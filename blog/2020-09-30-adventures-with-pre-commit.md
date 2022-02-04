@@ -1,16 +1,17 @@
 ---
 title: Adventures with pre-commit
 date: 2020-09-30
-summary: I started using the pre-commit framework a while back on my projects but
+summary:
+  I started using the pre-commit framework a while back on my projects but
   only with a very basic setup on pretty simple codebases. Common uses are apply code
   formatters like black or to run static type checking with mypy. I tried to create
   a rough framework for my Python projects.
 tags:
-- git
-- pre-commit
-- python
-
+  - git
+  - pre-commit
+  - python
 ---
+
 I started using the [pre-commit](https://pre-commit.com/) framework a while back on my projects but only with a very basic setup on pretty simple codebases. Common uses are applying code formatters like [black](https://github.com/psf/black) or to run static type checking with [mypy](http://mypy-lang.org/).
 
 The cool thing about using them is that it reduces the noise in your repository by formatting your code, and flagging issues _before_ it gets committed. I'd previously tended to run tools like black sporadically but this just creates an extra, often quite large commit, that doesn't change the functionality of the code but just adds noise.
@@ -60,10 +61,10 @@ The sample config includes a couple of useful tools but pre-commit can leverage 
 In the words of the [project](https://github.com/PyCQA/isort) "isort your imports, so you don't have to". I like this approach, having imports arranged consistently helps with readability and this makes it easy. It can be used here as a hook by adding the following to the project's `.pre-commit-config.yaml`:
 
 ```yaml
--   repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.1.4
-    hooks:
-    -   id: isort
+- repo: https://github.com/pre-commit/mirrors-isort
+  rev: v5.1.4
+  hooks:
+    - id: isort
 ```
 
 ### Using black to format code
@@ -71,9 +72,9 @@ In the words of the [project](https://github.com/PyCQA/isort) "isort your import
 I love black, I don't have any strong opinions on code style, I mainly just care that it's consistent. I certainly don't want to waste time ever arguing about it. Running black prior to every commit means that code is clean and consistent. It can be added as a hook like this:
 
 ```yaml
--   repo: https://github.com/ambv/black
-    rev: stable
-    hooks:
+- repo: https://github.com/ambv/black
+  rev: stable
+  hooks:
     - id: black
 ```
 
@@ -104,10 +105,10 @@ exclude = '''
 For any new Python projects I start, I'm getting into the habit of adding type hints. On a couple of projects, I've made the mistake of not really checking them as I go and find that I have a complicated mess to unpick when I finally run mypy. Using it as a pre-commit hook means I can fix them incrementally which avoids a future headache. For simpler projects, I'd probably not bother but it makes sense to have it as default. The following snippet adds mypy as a hook:
 
 ```yaml
--   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.782
-    hooks:
-    -   id: mypy
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v0.782
+  hooks:
+    - id: mypy
 ```
 
 ### Style checks and basic linting with Flake8
@@ -115,9 +116,9 @@ For any new Python projects I start, I'm getting into the habit of adding type h
 Although I'm using black to format the code, I've been playing around with using Flake8 in parallel for a couple of reasons. Firstly, it also does some linting of your code, flagging up unused imports for example which I find useful. I've also noticed that black doesn't seem to do anything about comment lines or long strings that breach the line length limit, flake8 will flag these. It can be added as a hook by adding the following yaml:
 
 ```yaml
--   repo: https://gitlab.com/pycqa/flake8
-    rev: 3.7.9
-    hooks:
+- repo: https://gitlab.com/pycqa/flake8
+  rev: 3.7.9
+  hooks:
     - id: flake8
 ```
 

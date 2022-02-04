@@ -2,18 +2,18 @@
 label: blog post
 hide_body: false
 fields:
-- type: text
-  name: title
-  label: title
-- type: text
-  name: path
-  label: path
-- type: datetime
-  name: date
-  label: date
-- type: textarea
-  name: summary
-  label: summary
-- type: list
-  name: tags
-  label: tags
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: path
+    label: path
+  - type: datetime
+    name: date
+    label: date
+  - type: textarea
+    name: summary
+    label: summary
+  - type: list
+    name: tags
+    label: tags

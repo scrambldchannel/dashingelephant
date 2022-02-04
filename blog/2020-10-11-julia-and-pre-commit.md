@@ -2,12 +2,12 @@
 title: Julia, are you sure I should commit?
 date: 2020-10-11
 summary: I've been working on Julia for a week now and wanted to try add some pre-commit hooks to the module I have started creating. One of the strengths of the pre-commit library for Python is the ability to create hooks for other languages. I didn't find much out there for Julia though so I tried to build one from scratch.
-tags: ['julia', 'git']
+tags: ["julia", "git"]
 ---
 
 I've been working on Julia for a week now and wanted to try add some pre-commit hooks to the module I have started creating. One of the strengths of the pre-commit library for Python is the ability to create hooks for other languages. I didn't find much out there dedicated to Julia although there are a few simpler hooks to handle whitespace etc that could be applied. I decided to investigate trying to build some Julia specific hooks from scratch.
 
-Pre-commit hooks are great for code formatting so I had that goal in mind as well as applying some basic linting. I also wanted to look at having the option to run a suite of tests. Generally, I avoid running tests automatically on each commit as it just takes too long. That said, curiousity meant that I wanted to build it, as a proof of concept if nothing else.
+Pre-commit hooks are great for code formatting so I had that goal in mind as well as applying some basic linting. I also wanted to look at having the option to run a suite of tests. Generally, I avoid running tests automatically on each commit as it just takes too long. That said, curiosity meant that I wanted to build it, as a proof of concept if nothing else.
 
 ### Where to get started?
 
@@ -23,7 +23,7 @@ I created a [new repository](https://github.com/scrambldchannel/pre-commit-julia
 
 #### Hook metadata
 
-This defines two hooks that will be run when any Julia files are changed. The ```entry``` field defines where to find the script that needs to be run.
+This defines two hooks that will be run when any Julia files are changed. The `entry` field defines where to find the script that needs to be run.
 
 ```yaml{codeTitle: ".pre-commit-hooks.yaml"}
 -   id: format_julia
@@ -44,7 +44,7 @@ This defines two hooks that will be run when any Julia files are changed. The ``
 
 #### Formatting code
 
-This is the script for formatting Julia code that will be fired by the ```format_julia``` hook. It first checks whether Julia is available in your path and, if so, asks Julia to execute a simple one liner that uses the formatter package to clean up any code. It will be executed once for every matching file that has been staged.
+This is the script for formatting Julia code that will be fired by the `format_julia` hook. It first checks whether Julia is available in your path and, if so, asks Julia to execute a simple one liner that uses the formatter package to clean up any code. It will be executed once for every matching file that has been staged.
 
 ```bash{codeTitle: "pre_commit_hooks/format.sh"}
 #!/bin/bash
@@ -101,7 +101,6 @@ julia --color=yes --check-bounds="$checkbounds" --inline="$inline" --project -e 
 ### Adding the hooks to a Julia project
 
 Assuming you have pre-commit installed in the project, you can add the hooks by adding something like this to your project repository. Note that I am specifying that I only want the tests to be run on a _push_. This is because they potentially take a long time so I don't want to run on every commit but I do want to run before pushing into Github because I'd rather a test fail locally than on Github's test runners.
-
 
 ```yaml{codeTitle: ".pre-commit-config.yaml"}
 - repo: https://github.com/scrambldchannel/pre-commit-julia

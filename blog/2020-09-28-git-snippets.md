@@ -1,15 +1,16 @@
 ---
 title: Trying to stay on the right track with git
 date: 2020-09-28
-summary: For when my memories are murky, this is a list of common git commands I tend
+summary:
+  For when my memories are murky, this is a list of common git commands I tend
   to use, aimed at a relative newbie. I actually used it to give an intro to git presentation
   to my team a few years ago but it's still a nice reminder of basic usage.
 tags:
-- git
-- github
-- bash
-
+  - git
+  - github
+  - bash
 ---
+
 This is a list of common git commands I tend to use, aimed at a relative newbie. I actually used it to give an intro to git presentation to my team a few years ago but it's still a nice reminder of basic usage. I'll tweak it as I go along.
 
 ### Clone a repo

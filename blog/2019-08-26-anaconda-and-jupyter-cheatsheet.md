@@ -2,7 +2,7 @@
 title: Anaconda and Jupyter Cheatsheet
 date: 2019-08-26
 summary: A bit annoyed at finding myself having to re-learn a good workflow for setting up dev environments for Jupyter projects, I thought I'd try to list my workflow as is and update as I improve so I can refer back after a hiatus.
-tags: ['anaconda', 'jupyter', 'python', 'linux']
+tags: ["anaconda", "jupyter", "python", "linux"]
 ---
 
 A bit annoyed at finding myself having to re-learn a good workflow for setting up dev environments for Jupyter projects, I thought I'd try to list my workflow as is and update as I improve so I can refer back after a hiatus.
@@ -34,6 +34,7 @@ This will give you a list of environments this conda knows about.
 ```bash{promptUser: "alex"}{promptHost: "thinky"}
 conda env list
 ```
+
 ```
 # conda environments:
 #
@@ -69,6 +70,7 @@ This looks for a package and tells you it's available.
 ```bash{promptUser: "alex"}{promptHost:"thinky(testenv)"}
 conda search plotly
 ```
+
 ```
 Loading channels: ...working... done
 # Name                       Version           Build  Channel
@@ -93,6 +95,7 @@ If you get a response like this, it's not available in the conda distribution yo
 ```bash{promptUser: "alex"}{promptHost: "thinky(testenv)"}
 conda search geoplotlib
 ```
+
 ```
 Loading channels: done
 No match found for: geoplotlib. Search: *geoplotlib*
@@ -106,11 +109,13 @@ If it's a library that's available on PyPi, you should be able to install it by 
 ```bash{promptUser: "alex"}{promptHost: "thinky(testenv)"}
 pip install geoplotlib
 ```
+
 ```
 Collecting geoplotlib
 [...]
 Successfully installed geoplotlib-0.3.2
 ```
+
 #### Deactivate
 
 Once you are done fiddling with a given environment, you can deactivate it so that anything you do won't impact it.
@@ -175,26 +180,24 @@ Ones I most for navigation.
 
 #### Command Mode
 
-|Action |Binding |
-|:------------ |:------------ |
-|Enter |enter edit mode |
-|Shift-Enter |run, select below |
-|Ctrl-Enter |run |
-|Alt-Enter |run, insert below |
-|Y |to code |
-|M |to markdown |
-
+| Action      | Binding           |
+| :---------- | :---------------- |
+| Enter       | enter edit mode   |
+| Shift-Enter | run, select below |
+| Ctrl-Enter  | run               |
+| Alt-Enter   | run, insert below |
+| Y           | to code           |
+| M           | to markdown       |
 
 #### Edit Mode
 
-|Action |Binding |
-|:------------ |:------------ |
-|Esc |Enter command mode |
-|Shift-Enter |run, select below |
-|Ctrl-Enter |run |
-|Alt-Enter |run, insert below |
-|Ctrl-S |Save and checkpoint |
-
+| Action      | Binding             |
+| :---------- | :------------------ |
+| Esc         | Enter command mode  |
+| Shift-Enter | run, select below   |
+| Ctrl-Enter  | run                 |
+| Alt-Enter   | run, insert below   |
+| Ctrl-S      | Save and checkpoint |
 
 ### Using with Git
 
@@ -205,7 +208,6 @@ I created a new empty repo on Github and cloned that locally and work there on n
 #### Gitignore
 
 I include this to ensure no checkpoints are included, useful if you iterate on the notebooks in the repo and don't want to inadvertently push private details back to Github. If you use the standard Python .gitignore from Github this will be included automatically.
-
 
 ```
 .ipynb_checkpoints
@@ -221,7 +223,7 @@ Perhaps this isn't the best approach but it works ok for now. I create a simple 
 
 ```json
 {
-  "SECRET_API_KEY" : "verysecret"
+  "SECRET_API_KEY": "verysecret"
 }
 ```
 
@@ -237,6 +239,7 @@ key = data['SECRET_API_KEY']
 ```
 
 Add this to .gitignore
+
 ```
 notebook_config.json
 ```
