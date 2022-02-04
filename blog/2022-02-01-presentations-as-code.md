@@ -1,5 +1,5 @@
 ---
-title: Presentations as code thnkas to Marp
+title: Presentations as code thanks to Marp
 date: 2022-02-01
 summary: I spent years dodging Powerpoint, with limited success. Whether it was me that was expected to deliver the presentation, or people imploring me to automate the creation of their slide decks, I hated few things more in day to day. What really pissed me off was the suspicion that it really didn't need to be this hard...
 tags: ["marp", "pdf", "js", "presentation", "vscode"]
