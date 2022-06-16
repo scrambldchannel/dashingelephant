@@ -20,9 +20,9 @@
         <div class="cd-timeline-content text-lg sm:text-lg space-y-6 mb-10">
           <div>2019 - 2020</div>
           <p class="text-sm text-gray-600">
-            Came to Berlin to be with my partner and went back to freelancing.
-            Have consulted on two finance transformations as a TM1 / Planning
-            Analytics specialist.
+            Came to Berlin to explore startup culture and went back to
+            freelancing. Have consulted on two finance transformations as a TM1
+            / Planning Analytics specialist.
           </p>
         </div>
       </div>
