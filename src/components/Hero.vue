@@ -6,7 +6,7 @@
     <div class="w-full sm:w-3/5 text-center sm:text-left">
       <div class="font-bold leading-tight text-4xl">Alexander Sutcliffe</div>
       <div class="font-bold text-teal-700 leading-tight text-2xl">
-        Business Intelligence Specialist
+        Professional Data Wrangler
       </div>
       <div class="flex-1 text-ms xs:text-sm mt-6">
         I'm an experienced Berlin-based data professional with a genuine passion
