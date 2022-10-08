@@ -1,6 +1,6 @@
 ---
 title: Hack to autogenerate TM1py convenience functions for reading data from cubes
-date: 2022-02-03
+date: 2022-10-08
 summary: I'm currently building a testing and validation framework using python for a very old an uirky TM1 model. TM1py provides all the functionality you need to pull data from a cell but I found myself writing wrappers for specific cubes to make this a bit easier. Rather than writing them all by hand, I hacked together this little script to autogenerate the code so I thought I'd share it in case someone else had a similar need.
 tags:
   - tm1
