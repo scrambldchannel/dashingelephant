@@ -148,7 +148,9 @@ for c in tm1.cubes.get_model_cubes():
 
 ### Code and possible enhancements
 
-I've stuck the rough PoC in [https://github.com/scrambldchannel/tm1py_wrapper_gen](a Github Repo). This was a quick hack that helped me get productive on a project and while I originally started thinking about using djinja templates and other fancy tools, fstrings took me a long way. I did wonder if it would be possible to create a [Cookiecutter template](https://github.com/cookiecutter/cookiecutter) but not sure how the auth part would work (but it's a fun idea).
+I've stuck the rough PoC in [https://github.com/scrambldchannel/tm1py_wrapper_gen](a Github Repo). This was a quick hack that helped me get productive on a project and while I originally started thinking about using djinja templates and other fancy tools, fstrings took me a long way. A quick fiddle might be to use cube and dimension aliases to improve the readability of the generated code but that feels like a laborious workaround for a poorly designed model.
+
+I did wonder if it would be possible to create a [Cookiecutter template](https://github.com/cookiecutter/cookiecutter) but not sure how the auth part would work (but it's a fun idea). This I might explore as it would be the ideal way to share this hack more widely.
 
 One other idea I had was that rather than creating a bunch of functions that use a `TM1Service` object as a parameter, I could instead generate a custom subclass of `TM1Service` for a given TM1 model. This would obviously result in a bloated object but does that really matter if you're generating the code?
 
