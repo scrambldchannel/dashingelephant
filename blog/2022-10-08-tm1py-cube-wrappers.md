@@ -146,7 +146,7 @@ for c in tm1.cubes.get_model_cubes():
     print(write_func(c))
 ```
 
-### Code and possible enhancements
+### Possible enhancements
 
 I've stuck the rough PoC in [a Github Repo](https://github.com/scrambldchannel/tm1py_wrapper_gen). This was a quick hack that helped me get productive on a project and while I originally started thinking about using djinja templates and other fancy tools, fstrings took me a long way. A quick fiddle might be to use cube and dimension aliases to improve the readability of the generated code but that feels like a laborious workaround for a poorly designed model.
 
