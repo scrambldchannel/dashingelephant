@@ -14,6 +14,8 @@ I'm currently building a testing and validation framework using python for a ver
 
 TM1py gives you the ability to read a value from a cell via the `get_value` method of the [CellService object](https://github.com/cubewise-code/tm1py/blob/master/TM1py/Services/CellService.py). This provides functionality much akin to the native TM1 `DB` function used in rules and TI.
 
+**Note** it's worth pointing out that this is a pretty inneficient way to get data out of a cube with Python but sometimes it is convenient to compare values of individual cells.
+
 ```python
 cube = "Sales Planning"
 
