@@ -80,7 +80,7 @@ The above query returns the following error:
 
 A bit of googling showed that this approach won't work. In any case, I wasn't always going to have the names in an array somewhere else in the json. A few workarounds suggested on Stack Overflow wouldn't work me...
 
-After a few coffees, I eventually made some progress by using the UDFs from [bigquery-utils](https://github.com/GoogleCloudPlatform/bigquery-utils). Using a combination of `json_extract_keys` and `json_extract_values), I was able to extract the information I wanted:
+After a few coffees, I eventually made some progress by using the UDFs from [bigquery-utils](https://github.com/GoogleCloudPlatform/bigquery-utils). Using a combination of `json_extract_keys` and `json_extract_values`, I was able to extract the information I wanted:
 
 ```sql
 WITH
